@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import logo from '../../assets/img/logo.svg';
 import './Popup.css';
 import UploadExcel from './upload/uploadExcel';
+import { Space, Typography } from 'antd';
+const { Text, Link } = Typography;
 
 const Popup = () => {
 
@@ -21,9 +22,9 @@ const Popup = () => {
 	return (
 		<div className="App">
 			<header className="App-header">
-				<h3>
-					请提前上传Excel录入考生信息，表格模版找杰哥要
-				</h3>
+				<Space direction="vertical" style={{marginBottom: '24px'}}>
+					<Text type="danger">提前上传Excel录入考生信息, 最新模版 -> 找杰哥</Text>
+				</Space>
 			</header>
 			<main>
 				<UploadExcel />

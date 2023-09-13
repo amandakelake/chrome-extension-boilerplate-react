@@ -4,6 +4,7 @@ import { UploadChangeParam } from 'antd/lib/upload/interface';
 import * as XLSX from 'xlsx';
 import { ColumnsType } from 'antd/es/table';
 import { DataItem } from '../../../types/item';
+import { matchBirthday } from '../../../common/utils';
 
 const UploadExcel: React.FC = () => {
 
@@ -17,17 +18,21 @@ const UploadExcel: React.FC = () => {
 		{
 			title: '姓名',
 			dataIndex: 'name',
+			fixed: 'left',
 			key: 'name',
+			width: 80
 		},
 		{
-			title: '类型',
-			dataIndex: 'level',
-			key: 'level',
+			title: '生日',
+			dataIndex: 'identityId',
+			key: 'identityId',
+			// width: 110,
+			render: (index, record) => matchBirthday(record.identityId)
 		},
 		{
-			title: '性别',
-			dataIndex: 'gender',
-			key: 'gender',
+			title: '户籍',
+			dataIndex: 'district',
+			key: 'district',
 		},
 		{
 			title: '操作',
@@ -36,9 +41,9 @@ const UploadExcel: React.FC = () => {
 			fixed: 'right',
 			width: 100,
 			render: (index, record) => <div key={index}>
-				<Button type="primary" size={'large'} onClick={() => filterRegisterPage(record)}>填充注册页</Button>
-				<Button type="primary" size={'large'} onClick={() => filterDetailPage(record)}
-						style={{ marginTop: '16px' }}>填充信息页</Button>
+				<Button type="primary" size={'small'} onClick={() => filterRegisterPage(record)}>注册填充</Button>
+				{/*<Button type="primary" size={'large'} onClick={() => filterDetailPage(record)}*/}
+				{/*		style={{ marginTop: '16px' }}>填充信息页</Button>*/}
 			</div>,
 		},
 	];

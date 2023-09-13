@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
-	"name": "杰哥开飞机",
-	"description": "冲啊",
+	"name": "杰哥揸飞机",
+	"description": "冲刺年入千万",
 	"options_page": "options.html",
 	"background": { "service_worker": "background.bundle.js" },
 	"action": {

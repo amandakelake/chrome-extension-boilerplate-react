@@ -1,4 +1,5 @@
 import { DataItem } from '../../types/item';
+import { matchBirthday } from '../../common/utils';
 
 console.log('【Content】 script works!');
 console.log('Must reload extension for modifications to take effect.');
@@ -31,15 +32,19 @@ function register(item: DataItem) {
 	filterRegisterGender(item.gender === '女' ? 2 : 1);
 	filterRegisterIdentityType();
 	filterRegisterIdentityValue(item.identityId);
+	// TODO 生日功能暂不开放
+	// filterRegisterBirthday(item.identityId);
 	filterRegisterNation();
 	filterRegisterPassword();
 	filterRegisterPasswordRepeat();
 	filterRegisterPhone(item.phone);
+	// TODO 户籍填充
+	// filterDistrict(item.district);
 }
 
 function filterDetail(item: DataItem) {
-	console.log('filterDetail item', item);
-	console.log('document', document.body.innerHTML);
+	console.log('还没开发')
+	// filterRegisterBirthday(item.identityId);
 }
 
 function filterRegisterName(name: string) {
@@ -78,6 +83,25 @@ function filterRegisterIdentityValue(identity: string) {
 	const input = cell.querySelector('input');
 	if (!input) return;
 	input.value = identity;
+}
+
+function filterRegisterBirthday(identity: string) {
+	try {
+		const birthday = matchBirthday(identity);
+		if (!birthday) return;
+		const cell = getCell(1, 3);
+		if (!cell) return;
+		const input = cell.querySelector('input');
+		if (!input) return;
+		input.disabled = false;
+		input.value = birthday;
+	} catch (err) {
+		console.error('filterRegisterBirthday', err)
+	}
+}
+
+function filterDistrict(district: string) {
+	console.log('district', district);
 }
 
 function filterRegisterNation() {
