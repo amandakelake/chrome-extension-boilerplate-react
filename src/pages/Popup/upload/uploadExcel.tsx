@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Button, Table, Upload, message } from 'antd';
 import { UploadChangeParam } from 'antd/lib/upload/interface';
 import * as XLSX from 'xlsx';
 import { ColumnsType } from 'antd/es/table';
 import { DataItem } from '../../../types/item';
-import { matchBirthday } from '../../../common/utils';
 import { IMessageCmd } from '../../../types/common';
 
-const UploadExcel: React.FC = () => {
+import { Input } from 'antd';
+import { SearchProps } from 'antd/es/input';
 
-	const [excelJsonData, setExcelJsonData] = useState<DataItem[]>();
+const { Search } = Input;
+
+const UploadExcel: React.FC = () => {
+	const [searchText, setSearchText] = useState('');
+	const [excelJsonData, setExcelJsonData] = useState<DataItem[]>([]);
 
 	useEffect(() => {
 		readDataFromStorage();
@@ -22,13 +26,6 @@ const UploadExcel: React.FC = () => {
 			fixed: 'left',
 			key: 'name',
 			width: 80,
-		},
-		{
-			title: '生日',
-			dataIndex: 'identityId',
-			key: 'identityId',
-			// width: 110,
-			render: (index, record) => matchBirthday(record.identityId),
 		},
 		{
 			title: '户籍',
@@ -44,10 +41,10 @@ const UploadExcel: React.FC = () => {
 			render: (index, record) => <div key={index}>
 				<Button type="primary" size={'small'}
 						onClick={() => sendMessageToTab('register', record)}>注册填充</Button>
-				<Button type="primary" size={'large'} onClick={() => sendMessageToTab('filterDetail', record)}
-						style={{ marginTop: '16px' }}>信息填充</Button>
-				<Button type="primary" size={'large'} onClick={() => sendMessageToTab('filterProfession', record)}
-						style={{ marginTop: '16px' }}>专业填充</Button>
+				<Button type="primary" size={'small'} onClick={() => sendMessageToTab('filterDetail', record)}
+						style={{ marginTop: '6px' }}>信息填充</Button>
+				<Button type="primary" size={'small'} onClick={() => sendMessageToTab('filterProfession', record)}
+						style={{ marginTop: '6px' }}>专业填充</Button>
 			</div>,
 		},
 	];
@@ -107,6 +104,19 @@ const UploadExcel: React.FC = () => {
 		});
 	};
 
+
+	const searchedData = useMemo(() => {
+		if (!searchText) return excelJsonData;
+		return excelJsonData.filter((record) =>
+			record.name.toLowerCase().includes(searchText.toLowerCase())
+		);
+	}, [searchText, excelJsonData]);
+
+	const onSearch: SearchProps['onSearch'] = (value, _e, info) => {
+		console.log('onSearch', value, _e, info);
+		setSearchText(value);
+	}
+
 	return (
 		<div>
 			<Upload
@@ -116,15 +126,27 @@ const UploadExcel: React.FC = () => {
 			>
 				<Button type="primary" size={'large'}>上传Excel文件</Button>
 			</Upload>
-			<Table<DataItem>
-				style={{
-					marginTop: '24px',
-				}}
-				columns={columns}
-				dataSource={excelJsonData}
-				pagination={{ pageSize: 100 }}
-				bordered
+
+			<Search
+				placeholder="搜索名字"
+				allowClear
+				enterButton="Search"
+				size="large"
+				onChange={(e) => setSearchText(e.target.value)}
+				onSearch={onSearch}
+				style={{ marginTop: `24px`, marginBottom: `24px` }}
 			/>
+			<div style={{height: '300px', overflowY: 'scroll'}}>
+				<Table<DataItem>
+					style={{
+						marginTop: '24px',
+					}}
+					columns={columns}
+					dataSource={searchedData}
+					pagination={{ pageSize: 100 }}
+					bordered
+				/>
+			</div>
 		</div>
 	);
 };
