@@ -5,6 +5,7 @@ import * as XLSX from 'xlsx';
 import { ColumnsType } from 'antd/es/table';
 import { DataItem } from '../../../types/item';
 import { matchBirthday } from '../../../common/utils';
+import { IMessageCmd } from '../../../types/common';
 
 const UploadExcel: React.FC = () => {
 
@@ -20,14 +21,14 @@ const UploadExcel: React.FC = () => {
 			dataIndex: 'name',
 			fixed: 'left',
 			key: 'name',
-			width: 80
+			width: 80,
 		},
 		{
 			title: '生日',
 			dataIndex: 'identityId',
 			key: 'identityId',
 			// width: 110,
-			render: (index, record) => matchBirthday(record.identityId)
+			render: (index, record) => matchBirthday(record.identityId),
 		},
 		{
 			title: '户籍',
@@ -41,33 +42,22 @@ const UploadExcel: React.FC = () => {
 			fixed: 'right',
 			width: 100,
 			render: (index, record) => <div key={index}>
-				<Button type="primary" size={'small'} onClick={() => filterRegisterPage(record)}>注册填充</Button>
-				{/*<Button type="primary" size={'large'} onClick={() => filterDetailPage(record)}*/}
-				{/*		style={{ marginTop: '16px' }}>填充信息页</Button>*/}
+				<Button type="primary" size={'small'}
+						onClick={() => sendMessageToTab('register', record)}>注册填充</Button>
+				<Button type="primary" size={'large'} onClick={() => sendMessageToTab('filterDetail', record)}
+						style={{ marginTop: '16px' }}>信息填充</Button>
+				<Button type="primary" size={'large'} onClick={() => sendMessageToTab('filterProfession', record)}
+						style={{ marginTop: '16px' }}>专业填充</Button>
 			</div>,
 		},
 	];
 
-	const filterRegisterPage = (item: DataItem) => {
+	const sendMessageToTab = (cmd: IMessageCmd, item: DataItem) => {
 		console.log('item', item);
 		chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 			// @ts-ignore
 			chrome.tabs.sendMessage(tabs[0].id, {
-				cmd: 'register',
-				value: '你好，我是popup！',
-				data: item,
-			}, function (response) {
-				console.log('来自content的回复：' + response);
-			});
-		});
-	};
-
-	const filterDetailPage = (item: DataItem) => {
-		console.log('item', item);
-		chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-			// @ts-ignore
-			chrome.tabs.sendMessage(tabs[0].id, {
-				cmd: 'filterDetail',
+				cmd: cmd,
 				value: '你好，我是popup！',
 				data: item,
 			}, function (response) {
