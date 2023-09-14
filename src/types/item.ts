@@ -12,4 +12,5 @@ export interface DataItem {
     phone: string;
     profession: string;
     school: string;
+    password: string;
 }

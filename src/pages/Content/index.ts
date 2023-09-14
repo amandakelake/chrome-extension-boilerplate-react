@@ -1,7 +1,7 @@
 import { DataItem } from '../../types/item';
 import { matchBirthday } from '../../common/utils';
 
-console.log('【Content】 script works!');
+console.log('【Content】 script works -> with birthday!');
 console.log('Must reload extension for modifications to take effect.');
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -32,11 +32,10 @@ function register(item: DataItem) {
 	filterRegisterGender(item.gender === '女' ? 2 : 1);
 	filterRegisterIdentityType();
 	filterRegisterIdentityValue(item.identityId);
-	// TODO 生日功能暂不开放
-	// filterRegisterBirthday(item.identityId);
+	filterRegisterBirthday(item.identityId);
 	filterRegisterNation();
-	filterRegisterPassword();
-	filterRegisterPasswordRepeat();
+	filterRegisterPassword(item.password);
+	filterRegisterPasswordRepeat(item.password);
 	filterRegisterPhone(item.phone);
 	// TODO 户籍填充
 	// filterDistrict(item.district);
@@ -94,6 +93,7 @@ function filterRegisterBirthday(identity: string) {
 		const input = cell.querySelector('input');
 		if (!input) return;
 		input.disabled = false;
+		input.readOnly = false;
 		input.value = birthday;
 	} catch (err) {
 		console.error('filterRegisterBirthday', err)
@@ -117,7 +117,7 @@ function filterRegisterPassword(password?: string) {
 	if (!cell) return;
 	const input = cell.querySelector('input');
 	if (!input) return;
-	input.value = password || '*AAa2255';
+	input.value = password || 'Aa8899@@';
 }
 
 function filterRegisterPasswordRepeat(password?: string) {
@@ -125,7 +125,7 @@ function filterRegisterPasswordRepeat(password?: string) {
 	if (!cell) return;
 	const input = cell.querySelector('input');
 	if (!input) return;
-	input.value = password || '*AAa2255';
+	input.value = password || 'Aa8899@@';
 }
 
 function filterRegisterPhone(phone: string) {
