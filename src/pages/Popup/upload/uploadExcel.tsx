@@ -43,8 +43,6 @@ const UploadExcel: React.FC = () => {
 						onClick={() => sendMessageToTab('register', record)}>注册填充</Button>
 				<Button type="primary" size={'small'} onClick={() => sendMessageToTab('filterDetail', record)}
 						style={{ marginTop: '6px' }}>信息填充</Button>
-				<Button type="primary" size={'small'} onClick={() => sendMessageToTab('filterProfession', record)}
-						style={{ marginTop: '6px' }}>专业填充</Button>
 			</div>,
 		},
 	];

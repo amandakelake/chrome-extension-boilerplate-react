@@ -27,10 +27,17 @@ function getCellElement(row: number, column: number, table: HTMLTableElement | n
 export function filterDetail(item: DataItem) {
 	console.log('[content]: filterDetail', item);
 	detailTable = document.querySelectorAll('table')[0];
+	// 先选考生类别，再进行填充
+	const type = getExamineeType();
+	if (!type?.value) {
+		console.error('请先选择考生类别');
+		alert('请先选择考生类别');
+		return false;
+	}
 	filterPoliticalStatus(item.politicalStatus || '群众');
 	filterExamLanguage(item.examLanguage || '英语');
-	// 选择完考生类别就会出下面的表格
-	filterExamineeType(item.examineeType || '专科升本科类');
+	// 收到选中类别才会出下面的表格
+	// filterExamineeType(item.examineeType || '专科升本科类');
 	filterCareer(); // 	职业固定00
 	filterGraduatedSchool(item.graduatedSchool);
 	filterGraduatedProfession(item.graduatedProfession);
@@ -39,6 +46,7 @@ export function filterDetail(item: DataItem) {
 	filterPostalCode(item.postalCode);
 	filterTelephone(item.telephone);
 	filterAddress(item);
+	filterProfession(item, type.value);
 }
 
 function filterPoliticalStatus(politicalStatus: string) {
@@ -59,11 +67,15 @@ function filterExamLanguage(examLanguage: string) {
 	selector.value = ExamLanguageMap[examLanguage];
 }
 
-function filterExamineeType(examineeType: string) {
+function getExamineeType() {
 	const cell = getCell(9, 1, detailTable);
 	if (!cell) return;
 	const selector = cell.querySelector('select');
-	if (!selector) return;
+	return selector;
+}
+
+function filterExamineeType(examineeType: string) {
+	const selector = getExamineeType() as HTMLSelectElement;
 	selector.value = ExamineeTypeMap[examineeType];
 	ExamineeType = ExamineeTypeMap[examineeType];
 }
@@ -131,7 +143,7 @@ function filterTelephone(telephone: string) {
 }
 
 function filterAddress(item: DataItem) {
-	console.log('guangdongCityList', guangdongCityList)
+	console.log('guangdongCityList', guangdongCityList);
 	const cell = getCell(18, 1, detailTable) as HTMLElement;
 	if (!cell) return;
 	const selectorAll = cell.querySelectorAll('select');
@@ -185,28 +197,25 @@ declare global {
 	}
 }
 
-export function filterProfession(item: DataItem) {
-	if (!detailTable) {
-		alert('请先填充基础信息');
-		return false;
-	}
-	professionTable = document.querySelectorAll('table')[1];
+export function filterProfession(item: DataItem, ExamineeType: string) {
+	console.log('ExamineeType', ExamineeType);
 	if (ExamineeType === '1') {
 		// 1 专升本 第一行
-		const schoolElement = getCellElement(1, 1, professionTable, 'input') as HTMLInputElement;
-		schoolElement.value = item.schoolCode;
-		const professionOneElement = getCellElement(1, 3, professionTable, 'input') as HTMLInputElement;
-		professionOneElement.value = item.professionOneCode;
-		const professionTwoElement = getCellElement(1, 4, professionTable, 'input') as HTMLInputElement;
-		professionTwoElement.value = item.professionTwoCode;
+		const schoolElement = document.getElementById('zsbpc1bkyx1') as HTMLInputElement;
+		console.log('schoolElement', schoolElement);
+		if (schoolElement) schoolElement.value = item.schoolCode;
+		const professionOneElement = document.getElementById('zsbpc1bkyx1zy1') as HTMLInputElement;
+		if (professionOneElement) professionOneElement.value = item.professionOneCode;
+		const professionTwoElement = document.getElementById('zsbpc1bkyx1zy2') as HTMLInputElement;
+		if (professionTwoElement) professionTwoElement.value = item.professionTwoCode;
 	} else {
-		// 4 高中起点本科 非脱产班 第一行
-// 		5 高中起点高职高专  非脱产班 第一行
-		const schoolElement = getCellElement(1, 1, professionTable, 'input') as HTMLInputElement;
-		schoolElement.value = item.schoolCode;
-		const professionOneElement = getCellElement(1, 3, professionTable, 'input') as HTMLInputElement;
-		professionOneElement.value = item.professionOneCode;
-		const professionTwoElement = getCellElement(1, 4, professionTable, 'input') as HTMLInputElement;
-		professionTwoElement.value = item.professionTwoCode;
+		// 4 高中起点本科: 非脱产班 第一行
+		// 5 高中起点高职高专: 非脱产班 第一行
+		const schoolElement = document.getElementById('gqbpc4bkyx1') as HTMLInputElement;
+		if (schoolElement) schoolElement.value = item.schoolCode;
+		const professionOneElement = document.getElementById('gqbpc4bkyx1zy1') as HTMLInputElement;
+		if (professionOneElement) professionOneElement.value = item.professionOneCode;
+		const professionTwoElement = document.getElementById('gqbpc4bkyx1zy2') as HTMLInputElement;
+		if (professionTwoElement) professionTwoElement.value = item.professionTwoCode;
 	}
 }
