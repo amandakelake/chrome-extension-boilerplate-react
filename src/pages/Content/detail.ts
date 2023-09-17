@@ -1,5 +1,5 @@
 import { DataItem } from '../../types/item';
-import { ExamineeTypeMap, ExamLanguageMap, PoliticalStatusMap } from './constant';
+import { ExamineeTypeMap, ExamLanguageMap, GuangdongAddressTree, PoliticalStatusMap } from './constant';
 
 let detailTable: HTMLTableElement | null;
 let professionTable: HTMLTableElement | null;
@@ -19,6 +19,7 @@ function getCellElement(row: number, column: number, table: HTMLTableElement | n
 }
 
 export function filterDetail(item: DataItem) {
+	console.log('[content]: filterDetail', item);
 	detailTable = document.querySelectorAll('table')[0];
 	filterPoliticalStatus(item.politicalStatus || '群众');
 	filterExamLanguage(item.examLanguage || '英语');
@@ -31,6 +32,7 @@ export function filterDetail(item: DataItem) {
 	filterGraduatedId(item.graduatedId);
 	filterPostalCode(item.postalCode);
 	filterTelephone(item.telephone);
+	filterAddress(item);
 }
 
 function filterPoliticalStatus(politicalStatus: string) {
@@ -120,6 +122,61 @@ function filterTelephone(telephone: string) {
 	const input = cell.querySelector('input');
 	if (!input) return;
 	input.value = telephone;
+}
+
+function filterAddress(item: DataItem) {
+	const cell = getCell(18, 1, detailTable) as HTMLElement;
+	if (!cell) return;
+	const selectorAll = cell.querySelectorAll('select');
+	const inputEle = cell.querySelector('input');
+	if (inputEle) {
+		inputEle.value = item.addressDetail;
+	}
+	const provinceSelector = selectorAll[0];
+	const citySelector = selectorAll[1];
+	const areaSelector = selectorAll[2];
+	if (!provinceSelector) return;
+	// console.log('window.ssxzs', window.ssxzs); // 懒得读取window.ssxzs了  需要多重通信
+	const provinceCode = '44'; // 写死广东省
+	provinceSelector.value = provinceCode; // 写死广东省
+	if (!citySelector) return;
+	const cityList = GuangdongAddressTree.filter(ele => Number(ele.depth) === 2 && ele.code.substring(0, 2) === provinceCode);
+	console.log('cityList', cityList);
+	cityList.forEach(area => {
+		const optionElement = document.createElement('option');
+		optionElement.value = area.code;
+		optionElement.text = area.name;
+		citySelector.append(optionElement);
+	});
+	const cityCode = GuangdongAddressTree.find(ele => ele.name === item.city)?.code;
+	console.log('cityCode', cityCode);
+	if (!cityCode) return;
+	citySelector.value = cityCode;
+	const areaList = GuangdongAddressTree.filter(ele => Number(ele.depth) === 3 && ele.code.substring(0, 4) === cityCode);
+	console.log('areaList', areaList);
+	areaList.forEach(area => {
+		const optionElement = document.createElement('option');
+		optionElement.value = area.code;
+		optionElement.text = area.name;
+		areaSelector.append(optionElement);
+	});
+	const areaCode = areaList.find(ele => ele.name === item.area)?.code;
+	console.log('areaCode', areaCode);
+	if (!areaCode) return;
+	areaSelector.value = areaCode;
+}
+
+export interface ISsxzsItem {
+	code: string;
+	depth: string;
+	iszd: string;
+	name: string;
+}
+
+declare global {
+	interface Window {
+		ssxzs: ISsxzsItem[];
+	}
 }
 
 export function filterProfession(item: DataItem) {
