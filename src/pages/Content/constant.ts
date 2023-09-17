@@ -394,3 +394,12 @@ export const GuangdongAddressTree = [
 		"name": "郁南县",
 	}, { "code": "445381", "depth": "3", "iszd": "1", "name": "罗定市" },
 ];
+
+export const guangdongCode = '44';
+export const guangdongCityList = GuangdongAddressTree.filter(ele => Number(ele.depth) === 2 && ele.code.substring(0, 2) === guangdongCode).map(city => {
+	const areaList = GuangdongAddressTree.filter(ele => Number(ele.depth) === 3 && ele.code.substring(0, 4) === city.code).map(area => {
+		return { code: area.code, name: area.name };
+	});
+	return { code: city.code, name: city.name, children: areaList };
+});
+console.log('guangdongCityList', guangdongCityList);

@@ -1,5 +1,11 @@
 import { DataItem } from '../../types/item';
-import { ExamineeTypeMap, ExamLanguageMap, GuangdongAddressTree, PoliticalStatusMap } from './constant';
+import {
+	ExamineeTypeMap,
+	ExamLanguageMap,
+	GuangdongAddressTree,
+	guangdongCityList, guangdongCode,
+	PoliticalStatusMap,
+} from './constant';
 
 let detailTable: HTMLTableElement | null;
 let professionTable: HTMLTableElement | null;
@@ -125,6 +131,7 @@ function filterTelephone(telephone: string) {
 }
 
 function filterAddress(item: DataItem) {
+	console.log('guangdongCityList', guangdongCityList)
 	const cell = getCell(18, 1, detailTable) as HTMLElement;
 	if (!cell) return;
 	const selectorAll = cell.querySelectorAll('select');
@@ -137,22 +144,21 @@ function filterAddress(item: DataItem) {
 	const areaSelector = selectorAll[2];
 	if (!provinceSelector) return;
 	// console.log('window.ssxzs', window.ssxzs); // 懒得读取window.ssxzs了  需要多重通信
-	const provinceCode = '44'; // 写死广东省
-	provinceSelector.value = provinceCode; // 写死广东省
+	provinceSelector.value = guangdongCode; // 写死广东省
+
 	if (!citySelector) return;
-	const cityList = GuangdongAddressTree.filter(ele => Number(ele.depth) === 2 && ele.code.substring(0, 2) === provinceCode);
-	console.log('cityList', cityList);
-	cityList.forEach(area => {
+	guangdongCityList.forEach(area => {
 		const optionElement = document.createElement('option');
 		optionElement.value = area.code;
 		optionElement.text = area.name;
 		citySelector.append(optionElement);
 	});
-	const cityCode = GuangdongAddressTree.find(ele => ele.name === item.city)?.code;
+	const cityCode = guangdongCityList.find(ele => ele.name === item.city)?.code;
 	console.log('cityCode', cityCode);
 	if (!cityCode) return;
 	citySelector.value = cityCode;
-	const areaList = GuangdongAddressTree.filter(ele => Number(ele.depth) === 3 && ele.code.substring(0, 4) === cityCode);
+
+	const areaList = guangdongCityList.find(item => item.code === cityCode)?.children || [];
 	console.log('areaList', areaList);
 	areaList.forEach(area => {
 		const optionElement = document.createElement('option');
