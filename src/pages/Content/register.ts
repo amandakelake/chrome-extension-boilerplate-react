@@ -1,5 +1,6 @@
 import { matchBirthday } from '../../common/utils';
 import { DataItem } from '../../types/item';
+import { DistrictMap } from './constant';
 
 let registerTable: HTMLTableElement | null;
 
@@ -12,6 +13,7 @@ export function register(item: DataItem) {
 	filterRegisterIdentityValue(item.identityId);
 	filterRegisterBirthday(item.identityId);
 	filterRegisterNation();
+	filterDistrict(item.district);
 	filterRegisterPassword(item.password);
 	filterRegisterPasswordRepeat(item.password);
 	filterRegisterPhone(item.phone);
@@ -80,10 +82,6 @@ export function filterRegisterBirthday(identity: string) {
 	}
 }
 
-export function filterDistrict(district: string) {
-	console.log('district', district);
-}
-
 export function filterRegisterNation() {
 	const cell = getCell(3, 1);
 	if (!cell) return;
@@ -91,6 +89,19 @@ export function filterRegisterNation() {
 	if (!selector) return;
 	selector.value = '01';
 }
+
+export function filterDistrict(district: string) {
+	const cell = getCell(3, 3);
+	if (!cell) return;
+	const selector = cell.querySelector('select');
+	if (!selector) return;
+	// @ts-ignore
+	if (DistrictMap[district]) {
+		// @ts-ignore
+		selector.value = DistrictMap[district];
+	}
+}
+
 
 export function filterRegisterPassword(password?: string) {
 	const cell = getCell(4, 1);

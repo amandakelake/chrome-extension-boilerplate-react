@@ -1,6 +1,5 @@
 import { DataItem } from '../../types/item';
 import {
-	ExamineeTypeMap,
 	ExamLanguageMap,
 	guangdongCityList, guangdongCode,
 	PoliticalStatusMap,
@@ -15,12 +14,6 @@ function getCell(row: number, column: number, table: HTMLTableElement | null): H
 	return rowCells[column];
 }
 
-function getCellElement(row: number, column: number, table: HTMLTableElement | null, element: 'input' | 'select') {
-	const cell = getCell(row, column, table);
-	if (!cell) return;
-	return cell.querySelector(element) || null;
-}
-
 export function filterDetail(item: DataItem) {
 	console.log('[content]: filterDetail', item);
 	detailTable = document.querySelectorAll('table')[0];
@@ -33,15 +26,13 @@ export function filterDetail(item: DataItem) {
 	}
 	filterPoliticalStatus(item.politicalStatus || '群众');
 	filterExamLanguage(item.examLanguage || '英语');
-	// 收到选中类别才会出下面的表格
-	// filterExamineeType(item.examineeType || '专科升本科类');
 	filterCareer(); // 	职业固定00
-	filterGraduatedSchool(item.graduatedSchool);
-	filterGraduatedProfession(item.graduatedProfession);
+	filterInputById('byxx', item.graduatedSchool)
+	filterInputById('byzy', item.graduatedProfession);
 	filterGraduateTime(item.graduateTime);
-	filterGraduatedId(item.graduatedId);
-	filterPostalCode(item.postalCode);
-	filterTelephone(item.telephone);
+	filterInputById('byzshm', item.graduatedId)
+	filterInputById('yzbm', item.postalCode)
+	filterInputById('lxdh', item.telephone)
 	filterAddress(item);
 	filterProfession(item, String(type?.value));
 }
@@ -71,35 +62,12 @@ function getExamineeType() {
 	return selector;
 }
 
-function filterExamineeType(examineeType: string) {
-	const selector = getExamineeType() as HTMLSelectElement;
-	selector.value = ExamineeTypeMap[examineeType];
-}
-
 function filterCareer() {
 	const cell = getCell(13, 3, detailTable);
 	if (!cell) return;
 	const selector = cell.querySelector('select');
 	if (!selector) return;
 	selector.value = '00';
-}
-
-function filterGraduatedSchool(graduatedSchool: string) {
-	if (!graduatedSchool) return false;
-	const cell = getCell(14, 1, detailTable);
-	if (!cell) return;
-	const input = cell.querySelector('input');
-	if (!input) return;
-	input.value = graduatedSchool;
-}
-
-function filterGraduatedProfession(graduatedProfession: string) {
-	if (!graduatedProfession) return false;
-	const cell = getCell(15, 1, detailTable);
-	if (!cell) return;
-	const input = cell.querySelector('input');
-	if (!input) return;
-	input.value = graduatedProfession;
 }
 
 function filterGraduateTime(graduateTime: string) {
@@ -115,33 +83,6 @@ function filterGraduateTime(graduateTime: string) {
 	} catch (err) {
 		console.error('filterGraduateTime', err);
 	}
-}
-
-function filterGraduatedId(graduatedId: string) {
-	if (!graduatedId) return false;
-	const cell = getCell(16, 1, detailTable);
-	if (!cell) return;
-	const input = cell.querySelector('input');
-	if (!input) return;
-	input.value = graduatedId;
-}
-
-function filterPostalCode(postalCode: string) {
-	if (!postalCode) return;
-	const cell = getCell(17, 1, detailTable);
-	if (!cell) return;
-	const input = cell.querySelector('input');
-	if (!input) return;
-	input.value = postalCode;
-}
-
-function filterTelephone(telephone: string) {
-	if (!telephone) return;
-	const cell = getCell(17, 3, detailTable);
-	if (!cell) return;
-	const input = cell.querySelector('input');
-	if (!input) return;
-	input.value = telephone;
 }
 
 function filterAddress(item: DataItem) {
@@ -200,38 +141,37 @@ declare global {
 }
 
 export function filterProfession(item: DataItem, type: string) {
-	console.log('type', type);
 	if (type === '1') {
 		// 1 专升本 第一行
-		filterSchoolAndProfessionInput('zsbpc1bkyx1', item.schoolOneCode);
-		filterSchoolAndProfessionInput('zsbpc1bkyx1zy1', item.professionOneCode);
-		filterSchoolAndProfessionInput('zsbpc1bkyx1zy2', item.professionTwoCode);
+		filterInputById('zsbpc1bkyx1', item.schoolOneCode);
+		filterInputById('zsbpc1bkyx1zy1', item.professionOneCode);
+		filterInputById('zsbpc1bkyx1zy2', item.professionTwoCode);
 
-		filterSchoolAndProfessionInput('zsbpc1bkyx2', item.schoolTwoCode);
-		filterSchoolAndProfessionInput('zsbpc1bkyx2zy1', item.professionThreeCode);
-		filterSchoolAndProfessionInput('zsbpc1bkyx2zy2', item.professionFourCode);
+		filterInputById('zsbpc1bkyx2', item.schoolTwoCode);
+		filterInputById('zsbpc1bkyx2zy1', item.professionThreeCode);
+		filterInputById('zsbpc1bkyx2zy2', item.professionFourCode);
 	} else if (type === '4') {
 		// 4 高中起点本科: 非脱产班 第一行
-		filterSchoolAndProfessionInput('gqbpc4bkyx1', item.schoolOneCode);
-		filterSchoolAndProfessionInput('gqbpc4bkyx1zy1', item.professionOneCode);
-		filterSchoolAndProfessionInput('gqbpc4bkyx1zy2', item.professionTwoCode);
+		filterInputById('gqbpc4bkyx1', item.schoolOneCode);
+		filterInputById('gqbpc4bkyx1zy1', item.professionOneCode);
+		filterInputById('gqbpc4bkyx1zy2', item.professionTwoCode);
 
-		filterSchoolAndProfessionInput('gqbpc4bkyx2', item.schoolTwoCode);
-		filterSchoolAndProfessionInput('gqbpc4bkyx2zy1', item.professionThreeCode);
-		filterSchoolAndProfessionInput('gqbpc4bkyx2zy2', item.professionFourCode);
+		filterInputById('gqbpc4bkyx2', item.schoolTwoCode);
+		filterInputById('gqbpc4bkyx2zy1', item.professionThreeCode);
+		filterInputById('gqbpc4bkyx2zy2', item.professionFourCode);
 	} else if (type === '5') {
 		// 5 高中起点高职高专: 非脱产班 第一行
-		filterSchoolAndProfessionInput('gqgpc4bkyx1', item.schoolOneCode);
-		filterSchoolAndProfessionInput('gqgpc4bkyx1zy1', item.professionOneCode);
-		filterSchoolAndProfessionInput('gqgpc4bkyx1zy2', item.professionTwoCode);
+		filterInputById('gqgpc4bkyx1', item.schoolOneCode);
+		filterInputById('gqgpc4bkyx1zy1', item.professionOneCode);
+		filterInputById('gqgpc4bkyx1zy2', item.professionTwoCode);
 
-		filterSchoolAndProfessionInput('gqgpc4bkyx2', item.schoolTwoCode);
-		filterSchoolAndProfessionInput('gqgpc4bkyx2zy1', item.professionThreeCode);
-		filterSchoolAndProfessionInput('gqgpc4bkyx2zy2', item.professionFourCode);
+		filterInputById('gqgpc4bkyx2', item.schoolTwoCode);
+		filterInputById('gqgpc4bkyx2zy1', item.professionThreeCode);
+		filterInputById('gqgpc4bkyx2zy2', item.professionFourCode);
 	}
 }
 
-function filterSchoolAndProfessionInput(id: string, value: string) {
+function filterInputById(id: string, value: string) {
 	const element = document.getElementById(id) as HTMLInputElement;
 	if (element && value) element.value = value;
 }

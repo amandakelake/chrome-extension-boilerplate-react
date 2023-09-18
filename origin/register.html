@@ -1,0 +1,2991 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; gbk">
+    <script type="text/javascript" src="./js/jquery.min-1.9.js"></script>
+    <script type="text/javascript" src="./cgybm_files/My97/WdatePicker.js"></script>
+    <script type="text/javascript" src="./cgybm_files/IdCard-Validate.js"></script>
+    <script type="text/javascript" src="./cgybm_files/cgzc.js?v=1.242121"></script>
+    <link rel="stylesheet" type="text/css" href="./cgybm_files/cgbm.css">
+    <!-- layui -->
+    <script src="./cgybm_files/common/juicer-min.js"></script>
+    <script src="./cgybm_files/common/layer/layer.min.js"></script>
+    <title>广东省成人高考报名系统--考生报名</title>
+</head>
+<script type="text/javascript">
+	var path = "/cr" ;
+</script>
+<body>
+
+<script language="JavaScript">
+	function initSelect(){
+		var bmd = JSON.parse('[{"bmddm":"010301","jskslb":"145","mc":"广州医科大学继续教育学院","rs":0,"xqdm":"0103"},{"bmddm":"010302","jskslb":"145","mc":"广州侨光财经专修学院","rs":0,"xqdm":"0103"},{"bmddm":"010303","jskslb":"15","mc":"广州市中科自学考试辅导中心","rs":0,"xqdm":"0103"},{"bmddm":"010304","jskslb":"15","mc":"广州造船厂技工学校","rs":0,"xqdm":"0103"},{"bmddm":"010404","jskslb":"5","mc":"广州开放大学","rs":0,"xqdm":"0104"},{"bmddm":"010405","jskslb":"145","mc":"广东科艺自学考试辅导学校","rs":0,"xqdm":"0104"},{"bmddm":"010406","jskslb":"145","mc":"广东外语外贸大学东风东路报名点","rs":0,"xqdm":"0104"},{"bmddm":"010501","jskslb":"145","mc":"广州大学成人高等教育海珠区报名点","rs":0,"xqdm":"0105"},{"bmddm":"010504","jskslb":"5","mc":"广东轻工职业技术学院","rs":0,"xqdm":"0105"},{"bmddm":"010601","jskslb":"145","mc":"华南师范大学越平教学点","rs":0,"xqdm":"0106"},{"bmddm":"010602","jskslb":"145","mc":"广东金融学院天河分点","rs":0,"xqdm":"0106"},{"bmddm":"010605","jskslb":"145","mc":"侨大易普确认点","rs":0,"xqdm":"0106"},{"bmddm":"010607","jskslb":"15","mc":"广州市中科自学考试辅导中心广州体院报考点","rs":0,"xqdm":"0106"},{"bmddm":"010609","jskslb":"145","mc":"广州市德立职业培训学校","rs":0,"xqdm":"0106"},{"bmddm":"010610","jskslb":"5","mc":"广州现代信息工程职业技术学院","rs":0,"xqdm":"0106"},{"bmddm":"011101","jskslb":"15","mc":"广东机电职业技术学院","rs":0,"xqdm":"0111"},{"bmddm":"011102","jskslb":"5","mc":"广东白云学院（东校区）","rs":0,"xqdm":"0111"},{"bmddm":"011103","jskslb":"5","mc":"广州铁路职业技术学院（中专部）","rs":0,"xqdm":"0111"},{"bmddm":"011104","jskslb":"15","mc":"广东外语外贸大学","rs":0,"xqdm":"0111"},{"bmddm":"011105","jskslb":"15","mc":"白云区北区职业培训学校","rs":0,"xqdm":"0111"},{"bmddm":"011201","jskslb":"15","mc":"广州市文宣职业培训学校","rs":0,"xqdm":"0112"},{"bmddm":"011202","jskslb":"15","mc":"广州市黄埔区博德教育培训中心","rs":0,"xqdm":"0112"},{"bmddm":"011203","jskslb":"5","mc":"广东岭南职业技术学院","rs":0,"xqdm":"0112"},{"bmddm":"011204","jskslb":"15","mc":"广州市黄埔区广播电视大学","rs":0,"xqdm":"0112"},{"bmddm":"011301","jskslb":"145","mc":"广州市番禺区教育局招考办现场点","rs":0,"xqdm":"0113"},{"bmddm":"011401","jskslb":"145","mc":"广州市花都区英朗培训中心","rs":0,"xqdm":"0114"},{"bmddm":"011402","jskslb":"145","mc":"广州市花都区德立教育培训中心","rs":0,"xqdm":"0114"},{"bmddm":"011403","jskslb":"145","mc":"广州市花都区鸿城教育培训中心","rs":0,"xqdm":"0114"},{"bmddm":"011501","jskslb":"15","mc":"广州市南沙区招生考试委员会办公室","rs":0,"xqdm":"0115"},{"bmddm":"011701","jskslb":"145","mc":"广州南洋理工职业学院","rs":0,"xqdm":"0117"},{"bmddm":"011702","jskslb":"5","mc":"广州城建职业学院","rs":0,"xqdm":"0117"},{"bmddm":"011703","jskslb":"145","mc":"广州市从化区德立职业培训学校","rs":0,"xqdm":"0117"},{"bmddm":"011801","jskslb":"145","mc":"广州应用科技学院（广州校区）","rs":0,"xqdm":"0118"},{"bmddm":"011802","jskslb":"145","mc":"广州华立学院","rs":0,"xqdm":"0118"},{"bmddm":"011803","jskslb":"145","mc":"广州华商职业学院","rs":0,"xqdm":"0118"},{"bmddm":"011804","jskslb":"145","mc":"广东省轻工业技师学院（增城校区）","rs":0,"xqdm":"0118"},{"bmddm":"020101","jskslb":"145","mc":"韶关市辖","rs":0,"xqdm":"0201"},{"bmddm":"020501","jskslb":"15","mc":"韶关曲江","rs":0,"xqdm":"0205"},{"bmddm":"022201","jskslb":"15","mc":"韶关始兴","rs":0,"xqdm":"0222"},{"bmddm":"022401","jskslb":"15","mc":"韶关仁化","rs":0,"xqdm":"0224"},{"bmddm":"022901","jskslb":"15","mc":"韶关翁源","rs":0,"xqdm":"0229"},{"bmddm":"023201","jskslb":"15","mc":"韶关乳源","rs":0,"xqdm":"0232"},{"bmddm":"023301","jskslb":"15","mc":"韶关新丰","rs":0,"xqdm":"0233"},{"bmddm":"028101","jskslb":"15","mc":"韶关乐昌","rs":0,"xqdm":"0281"},{"bmddm":"028201","jskslb":"15","mc":"韶关南雄","rs":0,"xqdm":"0282"},{"bmddm":"030301","jskslb":"1","mc":"深圳罗湖区教育局成考专升本报名点","rs":0,"xqdm":"0303"},{"bmddm":"030302","jskslb":"5","mc":"深圳罗湖区教育局成考高中起点报名点","rs":0,"xqdm":"0303"},{"bmddm":"030401","jskslb":"1","mc":"深圳福田区教育局成考专升本报名点","rs":0,"xqdm":"0304"},{"bmddm":"030402","jskslb":"5","mc":"深圳福田区教育局成考高中起点报名点","rs":0,"xqdm":"0304"},{"bmddm":"030501","jskslb":"1","mc":"深圳南山区教育局成考专升本报名点","rs":0,"xqdm":"0305"},{"bmddm":"030502","jskslb":"45","mc":"深圳南山区教育局成考高中起点报名点","rs":0,"xqdm":"0305"},{"bmddm":"030601","jskslb":"1","mc":"深圳宝安区教育局成考专升本报名点","rs":0,"xqdm":"0306"},{"bmddm":"030602","jskslb":"5","mc":"深圳宝安区教育局成考高中起点报名点","rs":0,"xqdm":"0306"},{"bmddm":"030701","jskslb":"1","mc":"深圳龙岗区教育局成考专升本报名点","rs":0,"xqdm":"0307"},{"bmddm":"030702","jskslb":"5","mc":"深圳龙岗区教育局成考高中起点报名点","rs":0,"xqdm":"0307"},{"bmddm":"030801","jskslb":"1","mc":"深圳盐田区教育局成考专升本报名点","rs":0,"xqdm":"0308"},{"bmddm":"030802","jskslb":"5","mc":"深圳盐田区教育局成考高中起点报名点","rs":0,"xqdm":"0308"},{"bmddm":"030901","jskslb":"1","mc":"深圳龙华区教育局成考专升本报名点","rs":0,"xqdm":"0309"},{"bmddm":"030902","jskslb":"5","mc":"深圳龙华区教育局成考高中起点报名点","rs":0,"xqdm":"0309"},{"bmddm":"031001","jskslb":"1","mc":"深圳坪山区教育局成考专升本报名点","rs":0,"xqdm":"0310"},{"bmddm":"031002","jskslb":"5","mc":"深圳坪山区教育局成考高中起点报名点","rs":0,"xqdm":"0310"},{"bmddm":"031003","jskslb":"1","mc":"深圳大鹏新区成考专升本报名点","rs":0,"xqdm":"0310"},{"bmddm":"031101","jskslb":"1","mc":"深圳光明区教育局成考专升本报名点","rs":0,"xqdm":"0311"},{"bmddm":"031102","jskslb":"5","mc":"深圳光明区教育局成考高中起点报名点","rs":0,"xqdm":"0311"},{"bmddm":"031201","jskslb":"5","mc":"深圳大鹏新区成考高中起点报名","rs":0,"xqdm":"0312"},{"bmddm":"040101","jskslb":"145","mc":"珠海开放大学（原珠海电大）","rs":0,"xqdm":"0401"},{"bmddm":"040301","jskslb":"5","mc":"珠海市斗门开放大学（原斗门电大）","rs":0,"xqdm":"0403"},{"bmddm":"050101","jskslb":"1","mc":"汕头市招生办","rs":0,"xqdm":"0501"},{"bmddm":"050701","jskslb":"5","mc":"龙湖区招生办公室","rs":0,"xqdm":"0507"},{"bmddm":"051101","jskslb":"45","mc":"金平区招生办","rs":0,"xqdm":"0511"},{"bmddm":"051201","jskslb":"5","mc":"濠江区招生办","rs":0,"xqdm":"0512"},{"bmddm":"051301","jskslb":"5","mc":"潮阳区招生办","rs":0,"xqdm":"0513"},{"bmddm":"051401","jskslb":"5","mc":"潮南区招生办","rs":0,"xqdm":"0514"},{"bmddm":"051501","jskslb":"5","mc":"澄海区招生办","rs":0,"xqdm":"0515"},{"bmddm":"052301","jskslb":"5","mc":"南澳县招生办","rs":0,"xqdm":"0523"},{"bmddm":"060404","jskslb":"15","mc":"佛山开放大学德轩教育学习中心","rs":0,"xqdm":"0604"},{"bmddm":"060405","jskslb":"154","mc":"佛山市达德自学考试辅导学校","rs":0,"xqdm":"0604"},{"bmddm":"060406","jskslb":"15","mc":"佛山市华粤学校","rs":0,"xqdm":"0604"},{"bmddm":"060407","jskslb":"154","mc":"佛山市禅城区华泰教育培训中心","rs":0,"xqdm":"0604"},{"bmddm":"060408","jskslb":"15","mc":"佛山科学技术学院继续教育学院","rs":0,"xqdm":"0604"},{"bmddm":"060409","jskslb":"15","mc":"佛山市禅城区小艇自学考试辅导中心","rs":0,"xqdm":"0604"},{"bmddm":"060501","jskslb":"15","mc":"南海开放大学","rs":0,"xqdm":"0605"},{"bmddm":"060502","jskslb":"15","mc":"翰苑教育培训中心","rs":0,"xqdm":"0605"},{"bmddm":"060503","jskslb":"15","mc":"文通教育培训中心","rs":0,"xqdm":"0605"},{"bmddm":"060504","jskslb":"15","mc":"方正卫生教育培训中心","rs":0,"xqdm":"0605"},{"bmddm":"060505","jskslb":"15","mc":"狮山镇成人文化技术学校小塘点","rs":0,"xqdm":"0605"},{"bmddm":"060506","jskslb":"15","mc":"狮山镇成人文化技术学校官窑点","rs":0,"xqdm":"0605"},{"bmddm":"060508","jskslb":"15","mc":"天天学自考辅导中心","rs":0,"xqdm":"0605"},{"bmddm":"060509","jskslb":"15","mc":"百花教育培训中心","rs":0,"xqdm":"0605"},{"bmddm":"060511","jskslb":"15","mc":"桂城经纬教育培训中心","rs":0,"xqdm":"0605"},{"bmddm":"060513","jskslb":"15","mc":"大沥镇成人文化学校","rs":0,"xqdm":"0605"},{"bmddm":"060514","jskslb":"15","mc":"丹灶镇成人文化技术学校","rs":0,"xqdm":"0605"},{"bmddm":"060515","jskslb":"15","mc":"里水镇成人文化技术学校","rs":0,"xqdm":"0605"},{"bmddm":"060516","jskslb":"15","mc":"西樵镇成人文化学校","rs":0,"xqdm":"0605"},{"bmddm":"060517","jskslb":"15","mc":"现代人才培训中心","rs":0,"xqdm":"0605"},{"bmddm":"060518","jskslb":"15","mc":"佛山市鸿运交通技工学校","rs":0,"xqdm":"0605"},{"bmddm":"060519","jskslb":"15","mc":"力凡自考辅导中心","rs":0,"xqdm":"0605"},{"bmddm":"060601","jskslb":"15","mc":"顺德区招生办","rs":0,"xqdm":"0606"},{"bmddm":"060602","jskslb":"15","mc":"顺德区招生办","rs":0,"xqdm":"0606"},{"bmddm":"060603","jskslb":"15","mc":"顺德区招生办","rs":0,"xqdm":"0606"},{"bmddm":"060607","jskslb":"15","mc":"容桂成人文化技术学校","rs":0,"xqdm":"0606"},{"bmddm":"060608","jskslb":"15","mc":"北滘成人文化技术学校","rs":0,"xqdm":"0606"},{"bmddm":"060612","jskslb":"15","mc":"龙江成人文化技术学校","rs":0,"xqdm":"0606"},{"bmddm":"060613","jskslb":"15","mc":"杏坛成人文化技术学校","rs":0,"xqdm":"0606"},{"bmddm":"060701","jskslb":"15","mc":"三水区考试中心","rs":0,"xqdm":"0607"},{"bmddm":"060702","jskslb":"15","mc":"华粤学校三水分教处","rs":0,"xqdm":"0607"},{"bmddm":"060703","jskslb":"15","mc":"达德三水分教处","rs":0,"xqdm":"0607"},{"bmddm":"060801","jskslb":"15","mc":"高明区招生办","rs":0,"xqdm":"0608"},{"bmddm":"070101","jskslb":"1","mc":"江门招办","rs":0,"xqdm":"0701"},{"bmddm":"070102","jskslb":"1","mc":"五邑大学（专升本）","rs":0,"xqdm":"0701"},{"bmddm":"070103","jskslb":"1","mc":"广东江门中医药职业学院（专升本）","rs":0,"xqdm":"0701"},{"bmddm":"070106","jskslb":"1","mc":"台山招办","rs":0,"xqdm":"0701"},{"bmddm":"070107","jskslb":"1","mc":"开平招办","rs":0,"xqdm":"0701"},{"bmddm":"070108","jskslb":"1","mc":"鹤山招办","rs":0,"xqdm":"0701"},{"bmddm":"070113","jskslb":"1","mc":"新会招办（专升本）","rs":0,"xqdm":"0701"},{"bmddm":"070114","jskslb":"1","mc":"新会开放大学（专升本）","rs":0,"xqdm":"0701"},{"bmddm":"070115","jskslb":"1","mc":"新会机电职业技术学校（专升本）","rs":0,"xqdm":"0701"},{"bmddm":"070116","jskslb":"1","mc":"新会技师学院（时年校区）（专升本）","rs":0,"xqdm":"0701"},{"bmddm":"070117","jskslb":"1","mc":"新会技师学院（卫校校区）（专升本）","rs":0,"xqdm":"0701"},{"bmddm":"070303","jskslb":"5","mc":"广东江门中医药职业学院（高起专）","rs":0,"xqdm":"0703"},{"bmddm":"070304","jskslb":"5","mc":"五邑大学（高起专）","rs":0,"xqdm":"0703"},{"bmddm":"070305","jskslb":"5","mc":"江门职业技术学院","rs":0,"xqdm":"0703"},{"bmddm":"070311","jskslb":"5","mc":"江门招办","rs":0,"xqdm":"0703"},{"bmddm":"070312","jskslb":"5","mc":"江门市技师学院","rs":0,"xqdm":"0703"},{"bmddm":"070314","jskslb":"5","mc":"广东南方职业学院","rs":0,"xqdm":"0703"},{"bmddm":"070401","jskslb":"4","mc":"江门招办（高起本）","rs":0,"xqdm":"0704"},{"bmddm":"070501","jskslb":"5","mc":"新会招办（高起专）","rs":0,"xqdm":"0705"},{"bmddm":"070502","jskslb":"5","mc":"新会开放大学（高起专）","rs":0,"xqdm":"0705"},{"bmddm":"070503","jskslb":"5","mc":"新会机电职业技术学校（高起专）","rs":0,"xqdm":"0705"},{"bmddm":"070504","jskslb":"5","mc":"新会技师学院（时年校区）（高起专）","rs":0,"xqdm":"0705"},{"bmddm":"070505","jskslb":"5","mc":"新会技师学院（卫校校区）（高起专）","rs":0,"xqdm":"0705"},{"bmddm":"078101","jskslb":"5","mc":"台山招办","rs":0,"xqdm":"0781"},{"bmddm":"078301","jskslb":"5","mc":"开平招办","rs":0,"xqdm":"0783"},{"bmddm":"078302","jskslb":"5","mc":"恩平招办","rs":0,"xqdm":"0783"},{"bmddm":"078401","jskslb":"5","mc":"鹤山招办","rs":0,"xqdm":"0784"},{"bmddm":"078501","jskslb":"1","mc":"江门恩平","rs":0,"xqdm":"0785"},{"bmddm":"082501","jskslb":"5","mc":"徐闻县招考办(专科)","rs":0,"xqdm":"0825"},{"bmddm":"082502","jskslb":"1","mc":"徐闻招考办(专本)","rs":0,"xqdm":"0825"},{"bmddm":"082503","jskslb":"5","mc":"开发区招考办(专科)","rs":0,"xqdm":"0825"},{"bmddm":"082504","jskslb":"1","mc":"开发招考办(专本)","rs":0,"xqdm":"0825"},{"bmddm":"088101","jskslb":"5","mc":"廉江市招考办(专科)","rs":0,"xqdm":"0881"},{"bmddm":"088102","jskslb":"14","mc":"廉江招考办(专本/高本)","rs":0,"xqdm":"0881"},{"bmddm":"088103","jskslb":"5","mc":"遂溪县招考办(专科)","rs":0,"xqdm":"0881"},{"bmddm":"088104","jskslb":"14","mc":"遂溪招考办(专本/高本)","rs":0,"xqdm":"0881"},{"bmddm":"088105","jskslb":"5","mc":"赤坎区招考办(专科)","rs":0,"xqdm":"0881"},{"bmddm":"088106","jskslb":"14","mc":"赤坎招考办(专本/高本)","rs":0,"xqdm":"0881"},{"bmddm":"088201","jskslb":"5","mc":"雷州市招考办(专科)","rs":0,"xqdm":"0882"},{"bmddm":"088202","jskslb":"1","mc":"雷州招考办(专本)","rs":0,"xqdm":"0882"},{"bmddm":"088203","jskslb":"5","mc":"麻章区招考办(专科)","rs":0,"xqdm":"0882"},{"bmddm":"088204","jskslb":"1","mc":"麻章招考办(专本)","rs":0,"xqdm":"0882"},{"bmddm":"088301","jskslb":"5","mc":"吴川市招考办(专科)","rs":0,"xqdm":"0883"},{"bmddm":"088302","jskslb":"1","mc":"吴川招考办(专本)","rs":0,"xqdm":"0883"},{"bmddm":"088303","jskslb":"5","mc":"霞山区招考办(专科)","rs":0,"xqdm":"0883"},{"bmddm":"088304","jskslb":"1","mc":"霞山招考办(专本)","rs":0,"xqdm":"0883"},{"bmddm":"088305","jskslb":"5","mc":"坡头区招考办(专科)","rs":0,"xqdm":"0883"},{"bmddm":"088306","jskslb":"1","mc":"坡头招考办(专本)","rs":0,"xqdm":"0883"},{"bmddm":"090101","jskslb":"45","mc":"茂名市招生办","rs":0,"xqdm":"0901"},{"bmddm":"090102","jskslb":"1","mc":"茂名市招生办","rs":0,"xqdm":"0901"},{"bmddm":"092301","jskslb":"1","mc":"电白区电海中学","rs":0,"xqdm":"0923"},{"bmddm":"092302","jskslb":"5","mc":"电白区实验中学","rs":0,"xqdm":"0923"},{"bmddm":"098101","jskslb":"5","mc":"高州市招生办公室1","rs":0,"xqdm":"0981"},{"bmddm":"098102","jskslb":"1","mc":"高州市招生办公室2","rs":0,"xqdm":"0981"},{"bmddm":"098201","jskslb":"1","mc":"化州市招生办1","rs":0,"xqdm":"0982"},{"bmddm":"098202","jskslb":"5","mc":"化州市招生办2","rs":0,"xqdm":"0982"},{"bmddm":"098301","jskslb":"5","mc":"信宜市教育考试中心1","rs":0,"xqdm":"0983"},{"bmddm":"098302","jskslb":"1","mc":"信宜市教育考试中心2","rs":0,"xqdm":"0983"},{"bmddm":"120211","jskslb":"45","mc":"肇庆市端州区招生办公室","rs":0,"xqdm":"1202"},{"bmddm":"120212","jskslb":"45","mc":"肇庆市端州区招生办公室","rs":0,"xqdm":"1202"},{"bmddm":"120311","jskslb":"5","mc":"肇庆市鼎湖区招生办公室","rs":0,"xqdm":"1203"},{"bmddm":"120401","jskslb":"1","mc":"肇庆市高要区招生办公室","rs":0,"xqdm":"1204"},{"bmddm":"120402","jskslb":"1","mc":"肇庆市高要区招生办公室","rs":0,"xqdm":"1204"},{"bmddm":"122311","jskslb":"5","mc":"肇庆市广宁县招生办公室","rs":0,"xqdm":"1223"},{"bmddm":"122401","jskslb":"1","mc":"肇庆市怀集县招生办公室","rs":0,"xqdm":"1224"},{"bmddm":"122402","jskslb":"1","mc":"专升本广宁县招生办报名点","rs":0,"xqdm":"1224"},{"bmddm":"122411","jskslb":"5","mc":"肇庆市怀集县招生办公室","rs":0,"xqdm":"1224"},{"bmddm":"122501","jskslb":"1","mc":"肇庆市封开县招生办公室","rs":0,"xqdm":"1225"},{"bmddm":"122526","jskslb":"1","mc":"专升本德庆县招生办报名点","rs":0,"xqdm":"1225"},{"bmddm":"122601","jskslb":"5","mc":"肇庆市德庆县招生办公室","rs":0,"xqdm":"1226"},{"bmddm":"122625","jskslb":"5","mc":"高起专封开县招生办报名点","rs":0,"xqdm":"1226"},{"bmddm":"128411","jskslb":"5","mc":"四会市招生办高起专报名点","rs":0,"xqdm":"1284"},{"bmddm":"129101","jskslb":"1","mc":"肇庆市高新区招生办公室","rs":0,"xqdm":"1291"},{"bmddm":"129184","jskslb":"1","mc":"专升本四会市招生办报名点","rs":0,"xqdm":"1291"},{"bmddm":"130101","jskslb":"1","mc":"惠州市专科升本科报名点","rs":0,"xqdm":"1301"},{"bmddm":"130201","jskslb":"5","mc":"惠州市高中起点升专科报名点","rs":0,"xqdm":"1302"},{"bmddm":"132201","jskslb":"5","mc":"博罗县高中起点升专科报名点","rs":0,"xqdm":"1322"},{"bmddm":"140201","jskslb":"145","mc":"梅江区招生办","rs":0,"xqdm":"1402"},{"bmddm":"142101","jskslb":"145","mc":"梅县区招生办","rs":0,"xqdm":"1421"},{"bmddm":"142201","jskslb":"145","mc":"大埔县招生办","rs":0,"xqdm":"1422"},{"bmddm":"142301","jskslb":"145","mc":"丰顺县招生办","rs":0,"xqdm":"1423"},{"bmddm":"142401","jskslb":"145","mc":"五华县招生办","rs":0,"xqdm":"1424"},{"bmddm":"142601","jskslb":"145","mc":"平远县招生办","rs":0,"xqdm":"1426"},{"bmddm":"142701","jskslb":"145","mc":"蕉岭县招生办","rs":0,"xqdm":"1427"},{"bmddm":"148101","jskslb":"145","mc":"兴宁市招生办","rs":0,"xqdm":"1481"},{"bmddm":"150200","jskslb":"15","mc":"汕尾市城区招生办","rs":0,"xqdm":"1502"},{"bmddm":"152100","jskslb":"15","mc":"汕尾市海丰县招生办","rs":0,"xqdm":"1521"},{"bmddm":"158100","jskslb":"15","mc":"汕尾市陆丰市招生办","rs":0,"xqdm":"1581"},{"bmddm":"160201","jskslb":"145","mc":"源城区招生办教师进修学校1","rs":0,"xqdm":"1602"},{"bmddm":"160202","jskslb":"145","mc":"源城区招生办教师进修学校2","rs":0,"xqdm":"1602"},{"bmddm":"162101","jskslb":"145","mc":"河源市紫金县成招办","rs":0,"xqdm":"1621"},{"bmddm":"162201","jskslb":"145","mc":"龙川县招生办","rs":0,"xqdm":"1622"},{"bmddm":"162301","jskslb":"145","mc":"连平县招生办","rs":0,"xqdm":"1623"},{"bmddm":"162401","jskslb":"145","mc":"和平县成招办","rs":0,"xqdm":"1624"},{"bmddm":"162501","jskslb":"145","mc":"东源县招生办1","rs":0,"xqdm":"1625"},{"bmddm":"162502","jskslb":"145","mc":"东源县招生办2","rs":0,"xqdm":"1625"},{"bmddm":"162503","jskslb":"15","mc":"东源招办教师进修学校","rs":0,"xqdm":"1625"},{"bmddm":"162504","jskslb":"15","mc":"东源县招办市卫校1","rs":0,"xqdm":"1625"},{"bmddm":"162505","jskslb":"15","mc":"东源县招办河职院","rs":0,"xqdm":"1625"},{"bmddm":"170101","jskslb":"145","mc":"江城区招生办","rs":0,"xqdm":"1701"},{"bmddm":"170102","jskslb":"145","mc":"阳江市卫生学校","rs":0,"xqdm":"1701"},{"bmddm":"170109","jskslb":"145","mc":"阳江市广播电视大学","rs":0,"xqdm":"1701"},{"bmddm":"172101","jskslb":"145","mc":"阳西县招生办","rs":0,"xqdm":"1721"},{"bmddm":"172301","jskslb":"15","mc":"阳东区成人教育股","rs":0,"xqdm":"1723"},{"bmddm":"178107","jskslb":"145","mc":"阳春市招生办","rs":0,"xqdm":"1781"},{"bmddm":"180201","jskslb":"145","mc":"清远市清城区明睿教育培训中心","rs":0,"xqdm":"1802"},{"bmddm":"180202","jskslb":"15","mc":"清远市技师学院","rs":0,"xqdm":"1802"},{"bmddm":"180205","jskslb":"145","mc":"清远市清城区德立教育培训中心","rs":0,"xqdm":"1802"},{"bmddm":"180206","jskslb":"15","mc":"清远市锦绣教育培训中心","rs":0,"xqdm":"1802"},{"bmddm":"180207","jskslb":"15","mc":"清远市清城区鸿大教育培训有限公司","rs":0,"xqdm":"1802"},{"bmddm":"180208","jskslb":"15","mc":"清远市清城区明智教育培训有限公司","rs":0,"xqdm":"1802"},{"bmddm":"180209","jskslb":"15","mc":"清远市清城区名德教育培训中心","rs":0,"xqdm":"1802"},{"bmddm":"180210","jskslb":"145","mc":"清远市清城区领航教育培训有限公司","rs":0,"xqdm":"1802"},{"bmddm":"180211","jskslb":"15","mc":"清远市清城区泽信教育培训中心","rs":0,"xqdm":"1802"},{"bmddm":"188101","jskslb":"15","mc":"英德市德立教育培训中心","rs":0,"xqdm":"1881"},{"bmddm":"188202","jskslb":"15","mc":"清远市锦绣教育培训中心连州分校点","rs":0,"xqdm":"1882"},{"bmddm":"188203","jskslb":"15","mc":"连州市华睿教育咨询服务有限公司（盛世教育）","rs":0,"xqdm":"1882"},{"bmddm":"188205","jskslb":"15","mc":"广东省连州卫生学校","rs":0,"xqdm":"1882"},{"bmddm":"190101","jskslb":"145","mc":"东莞开放大学","rs":0,"xqdm":"1901"},{"bmddm":"190102","jskslb":"145","mc":"长安镇成人文化技术学校","rs":0,"xqdm":"1901"},{"bmddm":"190103","jskslb":"145","mc":"塘厦镇成人文化技术学校","rs":0,"xqdm":"1901"},{"bmddm":"190104","jskslb":"145","mc":"常平镇成人文化技术学校","rs":0,"xqdm":"1901"},{"bmddm":"190105","jskslb":"145","mc":"石龙镇成人文化技术学校","rs":0,"xqdm":"1901"},{"bmddm":"190106","jskslb":"145","mc":"望牛墩镇成人文化技术学校","rs":0,"xqdm":"1901"},{"bmddm":"200001","jskslb":"145","mc":"电子科技大学中山学院","rs":0,"xqdm":"2000"},{"bmddm":"200002","jskslb":"145","mc":"中山火炬职业技术学院","rs":0,"xqdm":"2000"},{"bmddm":"200003","jskslb":"145","mc":"中山职业技术学院","rs":0,"xqdm":"2000"},{"bmddm":"510199","jskslb":"1","mc":"潮州市招生办","rs":0,"xqdm":"5101"},{"bmddm":"510299","jskslb":"45","mc":"潮州市湘桥区招生办","rs":0,"xqdm":"5102"},{"bmddm":"512199","jskslb":"1","mc":"潮州市潮安区招生办","rs":0,"xqdm":"5121"},{"bmddm":"512299","jskslb":"5","mc":"潮州市饶平县报名点","rs":0,"xqdm":"5122"},{"bmddm":"520101","jskslb":"145","mc":"揭阳市直报名点01","rs":0,"xqdm":"5201"},{"bmddm":"520102","jskslb":"145","mc":"揭阳市直报名点02","rs":0,"xqdm":"5201"},{"bmddm":"520103","jskslb":"145","mc":"揭阳市直报名点03","rs":0,"xqdm":"5201"},{"bmddm":"520104","jskslb":"145","mc":"揭阳市直报名点04","rs":0,"xqdm":"5201"},{"bmddm":"520105","jskslb":"145","mc":"揭阳市直报名点05","rs":0,"xqdm":"5201"},{"bmddm":"520106","jskslb":"145","mc":"揭阳市直报名点06","rs":0,"xqdm":"5201"},{"bmddm":"520107","jskslb":"145","mc":"揭阳市直报名点07","rs":0,"xqdm":"5201"},{"bmddm":"520108","jskslb":"145","mc":"揭阳市直报名点08","rs":0,"xqdm":"5201"},{"bmddm":"520109","jskslb":"145","mc":"揭阳市直报名点09","rs":0,"xqdm":"5201"},{"bmddm":"520110","jskslb":"145","mc":"揭阳市直报名点10","rs":0,"xqdm":"5201"},{"bmddm":"530201","jskslb":"15","mc":"云城区招生办","rs":0,"xqdm":"5302"},{"bmddm":"532101","jskslb":"45","mc":"新兴县招生办","rs":0,"xqdm":"5321"},{"bmddm":"532201","jskslb":"15","mc":"郁南县招生办","rs":0,"xqdm":"5322"},{"bmddm":"538101","jskslb":"15","mc":"罗定市招生办","rs":0,"xqdm":"5381"}]');
+		var xqdm = $('#xqdm').val();
+		var kslbdm = $('#kslbdm').val();
+		if(bmd != null && bmd != undefined){
+			$("#bmddm").empty();
+			$("#bmddm").append("<option value=''>--请选择--</option>");
+			for (var i = 0; i < bmd.length; i++) {
+				var b = bmd[i];
+				if(b.xqdm == xqdm && b.jskslb.indexOf(kslbdm)!=-1){
+					$("#bmddm").append('<option value='+b.bmddm+' >'+b.mc+'</option>');
+				}
+			}
+		}
+	}
+	function showbz(){
+		var bmddm = $("#bmddm").val();
+		var json = {};
+		json.bmddm = bmddm;
+		$.ajax({
+			data : json,
+			type : "POST",
+			url : "bmdbz.do",
+			async : false,
+			success : function(data) {
+				alert(data);
+			},error:function(xhr, textStatus, errorThrown) {
+				console.log(xhr.responseText );
+			}
+		});
+	}
+	function loadKmz(kmzDm) {
+		var kslbdm = document.getElementById("kslbdm").value;
+		var kmzdm = document.getElementById("kmzdm");
+		for (var i = kmzdm.length - 1; i >= 1; i--) {
+			kmzdm.options[i] = null;
+		}
+		var idx = 0;
+
+		if ('1' == kslbdm) {
+			idx = idx + 1;
+			kmzdm.options[idx] = new Option('专升本文史、中医类(政治、外语、大学语文)', '101');
+			if ('101' == kmzDm) {
+				kmzdm.options[idx].selected = true;
+			}
+		}
+
+		if ('1' == kslbdm) {
+			idx = idx + 1;
+			kmzdm.options[idx] = new Option('专升本艺术类(政治、外语、艺术概论)', '102');
+			if ('102' == kmzDm) {
+				kmzdm.options[idx].selected = true;
+			}
+		}
+
+		if ('1' == kslbdm) {
+			idx = idx + 1;
+			kmzdm.options[idx] = new Option('专升本理工、经管类(政治、外语、高等数学(二))', '103');
+			if ('103' == kmzDm) {
+				kmzdm.options[idx].selected = true;
+			}
+		}
+
+		if ('1' == kslbdm) {
+			idx = idx + 1;
+			kmzdm.options[idx] = new Option('专升本法学类（文史）(政治、外语、民法)', '104');
+			if ('104' == kmzDm) {
+				kmzdm.options[idx].selected = true;
+			}
+		}
+
+		if ('1' == kslbdm) {
+			idx = idx + 1;
+			kmzdm.options[idx] = new Option('专升本教育学类（文史）(政治、外语、教育理论)', '105');
+			if ('105' == kmzDm) {
+				kmzdm.options[idx].selected = true;
+			}
+		}
+
+		if ('1' == kslbdm) {
+			idx = idx + 1;
+			kmzdm.options[idx] = new Option('专升本农学类（理工）(政治、外语、生态学基础)', '106');
+			if ('106' == kmzDm) {
+				kmzdm.options[idx].selected = true;
+			}
+		}
+
+		if ('1' == kslbdm) {
+			idx = idx + 1;
+			kmzdm.options[idx] = new Option('专升本医学类（理工）(政治、外语、医学综合)', '107');
+			if ('107' == kmzDm) {
+				kmzdm.options[idx].selected = true;
+			}
+		}
+
+		if ('4' == kslbdm) {
+			idx = idx + 1;
+			kmzdm.options[idx] = new Option('高中起点本科理工、体育类(语文、数学、外语、理化)', '201');
+			if ('201' == kmzDm) {
+				kmzdm.options[idx].selected = true;
+			}
+		}
+
+		if ('4' == kslbdm) {
+			idx = idx + 1;
+			kmzdm.options[idx] = new Option('高中起点本科文史、外语、艺术类(语文、数学、外语、史地)', '202');
+			if ('202' == kmzDm) {
+				kmzdm.options[idx].selected = true;
+			}
+		}
+
+		if ('5' == kslbdm) {
+			idx = idx + 1;
+			kmzdm.options[idx] = new Option('高中起点高职高专类（不分文理）(语文、数学、外语)', '301');
+			if ('301' == kmzDm) {
+				kmzdm.options[idx].selected = true;
+			}
+		}
+
+	}
+
+	function checkHkszd(type) {
+		if ($.trim($("#hkdm").val()) == "") {
+			$("#hkdm").focus();
+			alert('请选择户口所在地');
+			return false;
+		}
+		var f2 = $("#hkdm").find("option:selected").attr('data-id');
+		if(f2 == "1"){
+			alert('您所选的户口所在地是山区县或扶贫开发重点县，\n请再次确认是否与本人户籍信息一致，如不一致将导致系统审核无法通过。');
+		}
+		return true;
+	}
+
+	function yxcx(){
+		if ($.trim($("#kslxdm").val()) == "") {
+			$("#kslxdm").focus();
+			alert('请选择考试类型');
+			return;
+		}
+		if($.trim($("#kslbdm").val())==""){
+			$("#kslbdm").focus();
+			alert("请选择考生类别");
+			return;
+		}
+		if($.trim($("#jhlbdm").val())==""){
+			$("#jhlbdm").focus();
+			alert("请选择报考科类");
+			return;
+		}
+		if($.trim($("#kmzdm").val())==""){
+			$("#kmzdm").focus();
+			alert("请选择科目组");
+			return;
+		}
+		var byrq = $.trim($('#byrq').val());
+		var byzshm = $.trim($('#byzshm').val());
+		var sfbs='';
+
+		if($("#kslbdm").val()=="1"){
+			pcdm = "1";
+			if(('待定'==byzshm && ('2023-09'<=byrq) && ('2024-03'>=byrq))){
+				alert("请注意：您是未取得专科毕业证的专科应届生，只能填报本省的院校。");
+				sfbs='0';
+			}
+			if ($.trim($("#kslxdm").val()) == "1") {//免试生志愿只能填报本省的院校
+				alert("请注意：您选择的考试类型为免试生，只能填报本省的院校");
+				sfbs='0';
+			}
+		}else if($("#kslbdm").val()=="4"){
+			pcdm="2";
+		}else if($("#kslbdm").val()=="5"){
+			pcdm="3";
+		}
+		window.open("xycx.jsp?jhlbdm="+$("#jhlbdm").val()+"&kmzdm="+$("#kmzdm").val()+"&kslbdm="+$("#kslbdm").val()+"&sfbs="+sfbs+"&pcdm="+pcdm,null,"width=900,height=600,left=0,top=0,resizable=1");
+	}
+
+	function ckzgjfzc(){
+		//查看照顾加分政策
+		window.open("../cgbm/viewjf.jsp",null,"width=900,height=600,left=0,top=0,location=no,resizable=yes,minimize:yes,maximize:yes,scrollbars=yes");
+	}
+
+	function xqcx() {
+		window.open("xqcx.jsp",null,"width=900,height=600,left=0,top=0,location=no,resizable=yes,minimize:yes,maximize:yes,scrollbars=yes");
+	}
+
+	function loadXq(kslbdm,xqdm){
+		var xq = document.getElementById("xqdm");
+		for(var i = xq.length - 1; i >= 1; i--) {
+			xq.options[i] = null;
+		}
+		var idx = 0;
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0103'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0103 广州荔湾', '0103');
+			if ('0103' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0103'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0103 广州荔湾', '0103');
+			if ('0103' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0104'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0104 广州越秀', '0104');
+			if ('0104' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0104'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0104 广州越秀', '0104');
+			if ('0104' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0105'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0105 广州海珠', '0105');
+			if ('0105' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0105'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0105 广州海珠', '0105');
+			if ('0105' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0106'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0106 广州天河', '0106');
+			if ('0106' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0106'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0106 广州天河', '0106');
+			if ('0106' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0106'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0106 广州天河', '0106');
+			if ('0106' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0111'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0111 广州白云', '0111');
+			if ('0111' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0111'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0111 广州白云', '0111');
+			if ('0111' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0112'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0112 广州黄埔', '0112');
+			if ('0112' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0112'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0112 广州黄埔', '0112');
+			if ('0112' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0113'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0113 广州番禺', '0113');
+			if ('0113' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0114'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0114 广州花都', '0114');
+			if ('0114' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0115'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0115 广州南沙', '0115');
+			if ('0115' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0117'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0117 广州从化', '0117');
+			if ('0117' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0117'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0117 广州从化', '0117');
+			if ('0117' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0118'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0118 广州增城', '0118');
+			if ('0118' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0201'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0201 韶关市辖', '0201');
+			if ('0201' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0205'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0205 韶关曲江', '0205');
+			if ('0205' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0222'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0222 韶关始兴', '0222');
+			if ('0222' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0224'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0224 韶关仁化', '0224');
+			if ('0224' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0229'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0229 韶关翁源', '0229');
+			if ('0229' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0232'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0232 韶关乳源', '0232');
+			if ('0232' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0233'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0233 韶关新丰', '0233');
+			if ('0233' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0281'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0281 韶关乐昌', '0281');
+			if ('0281' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0282'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0282 韶关南雄', '0282');
+			if ('0282' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0303'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0303 深圳罗湖', '0303');
+			if ('0303' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0303'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0303 深圳罗湖', '0303');
+			if ('0303' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0304'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0304 深圳福田', '0304');
+			if ('0304' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0304'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0304 深圳福田', '0304');
+			if ('0304' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0305'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0305 深圳南山', '0305');
+			if ('0305' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0305'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0305 深圳南山', '0305');
+			if ('0305' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0306'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0306 深圳宝安', '0306');
+			if ('0306' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0306'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0306 深圳宝安', '0306');
+			if ('0306' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0307'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0307 深圳龙岗', '0307');
+			if ('0307' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0307'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0307 深圳龙岗', '0307');
+			if ('0307' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0308'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0308 深圳盐田', '0308');
+			if ('0308' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0308'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0308 深圳盐田', '0308');
+			if ('0308' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0309'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0309 深圳龙华', '0309');
+			if ('0309' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0309'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0309 深圳龙华', '0309');
+			if ('0309' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0310'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0310 深圳坪山', '0310');
+			if ('0310' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0310'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0310 深圳坪山', '0310');
+			if ('0310' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0311'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0311 深圳光明', '0311');
+			if ('0311' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0311'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0311 深圳光明', '0311');
+			if ('0311' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0312'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0312 深圳大鹏', '0312');
+			if ('0312' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0401'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0401 珠海市辖', '0401');
+			if ('0401' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0403'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0403 珠海斗门', '0403');
+			if ('0403' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0501'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0501 汕头市辖', '0501');
+			if ('0501' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0507'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0507 汕头龙湖', '0507');
+			if ('0507' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0511'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0511 汕头金平', '0511');
+			if ('0511' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0512'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0512 汕头濠江', '0512');
+			if ('0512' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0513'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0513 汕头潮阳', '0513');
+			if ('0513' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0514'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0514 汕头潮南', '0514');
+			if ('0514' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0515'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0515 汕头澄海', '0515');
+			if ('0515' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0523'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0523 汕头南澳', '0523');
+			if ('0523' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '5'==kslbdm ||'4'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0604'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0604 佛山禅城', '0604');
+			if ('0604' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0604'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0604 佛山禅城', '0604');
+			if ('0604' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0605'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0605 佛山南海', '0605');
+			if ('0605' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0606'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0606 佛山顺德', '0606');
+			if ('0606' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0607'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0607 佛山三水', '0607');
+			if ('0607' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0608'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0608 佛山高明', '0608');
+			if ('0608' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0701'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0701 江门市辖', '0701');
+			if ('0701' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0703'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0703 江门蓬江', '0703');
+			if ('0703' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'4'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0704'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0704 江门江海', '0704');
+			if ('0704' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0705'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0705 江门新会', '0705');
+			if ('0705' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0781'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0781 江门台山', '0781');
+			if ('0781' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0783'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0783 江门开平', '0783');
+			if ('0783' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0784'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0784 江门鹤山', '0784');
+			if ('0784' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0785'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0785 江门恩平', '0785');
+			if ('0785' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0825'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0825 湛江徐闻', '0825');
+			if ('0825' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0825'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0825 湛江徐闻', '0825');
+			if ('0825' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'4'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0881'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0881 湛江廉江', '0881');
+			if ('0881' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0881'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0881 湛江廉江', '0881');
+			if ('0881' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0882'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0882 湛江雷州', '0882');
+			if ('0882' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0882'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0882 湛江雷州', '0882');
+			if ('0882' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0883'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0883 湛江吴川', '0883');
+			if ('0883' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0883'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0883 湛江吴川', '0883');
+			if ('0883' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0901'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0901 茂名市辖', '0901');
+			if ('0901' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0901'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0901 茂名市辖', '0901');
+			if ('0901' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0923'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0923 茂名电白', '0923');
+			if ('0923' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0923'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0923 茂名电白', '0923');
+			if ('0923' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0981'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0981 茂名高州', '0981');
+			if ('0981' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0981'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0981 茂名高州', '0981');
+			if ('0981' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0982'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0982 茂名化州', '0982');
+			if ('0982' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0982'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0982 茂名化州', '0982');
+			if ('0982' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0983'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0983 茂名信宜', '0983');
+			if ('0983' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='0983'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('0983 茂名信宜', '0983');
+			if ('0983' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1202'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1202 肇庆端州', '1202');
+			if ('1202' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1203'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1203 肇庆鼎湖', '1203');
+			if ('1203' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1204'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1204 肇庆高要', '1204');
+			if ('1204' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1223'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1223 肇庆广宁', '1223');
+			if ('1223' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1224'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1224 肇庆怀集', '1224');
+			if ('1224' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1224'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1224 肇庆怀集', '1224');
+			if ('1224' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1225'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1225 肇庆封开', '1225');
+			if ('1225' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1226'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1226 肇庆德庆', '1226');
+			if ('1226' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1284'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1284 肇庆四会', '1284');
+			if ('1284' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1291'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1291 肇庆高新', '1291');
+			if ('1291' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1301'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1301 惠州市辖', '1301');
+			if ('1301' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1302'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1302 惠州惠城', '1302');
+			if ('1302' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1322'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1322 惠州博罗', '1322');
+			if ('1322' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1402'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1402 梅州梅江', '1402');
+			if ('1402' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1421'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1421 梅州梅县', '1421');
+			if ('1421' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1422'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1422 梅州大埔', '1422');
+			if ('1422' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1423'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1423 梅州丰顺', '1423');
+			if ('1423' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1424'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1424 梅州五华', '1424');
+			if ('1424' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1426'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1426 梅州平远', '1426');
+			if ('1426' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1427'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1427 梅州蕉岭', '1427');
+			if ('1427' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1481'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1481 梅州兴宁', '1481');
+			if ('1481' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1502'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1502 汕尾城区', '1502');
+			if ('1502' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1521'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1521 汕尾海丰', '1521');
+			if ('1521' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1581'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1581 汕尾陆丰', '1581');
+			if ('1581' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1602'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1602 河源源城', '1602');
+			if ('1602' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1621'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1621 河源紫金', '1621');
+			if ('1621' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1622'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1622 河源龙川', '1622');
+			if ('1622' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1623'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1623 河源连平', '1623');
+			if ('1623' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1624'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1624 河源和平', '1624');
+			if ('1624' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1625'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1625 河源东源', '1625');
+			if ('1625' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1625'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1625 河源东源', '1625');
+			if ('1625' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1701'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1701 阳江市辖', '1701');
+			if ('1701' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1721'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1721 阳江阳西', '1721');
+			if ('1721' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1723'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1723 阳江阳东', '1723');
+			if ('1723' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1781'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1781 阳江阳春', '1781');
+			if ('1781' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1802'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1802 清远清城', '1802');
+			if ('1802' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1802'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1802 清远清城', '1802');
+			if ('1802' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1881'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1881 清远英德', '1881');
+			if ('1881' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1882'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1882 清远连州', '1882');
+			if ('1882' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='1901'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('1901 东莞市辖', '1901');
+			if ('1901' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='2000'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('2000 中山全市', '2000');
+			if ('2000' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='5101'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('5101 潮州市辖', '5101');
+			if ('5101' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='5102'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('5102 潮州湘桥', '5102');
+			if ('5102' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'1'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='5121'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('5121 潮州潮安', '5121');
+			if ('5121' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '0'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='5122'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('5122 潮州饶平', '5122');
+			if ('5122' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('1'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='5201'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('5201 揭阳市辖', '5201');
+			if ('5201' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='5302'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('5302 云浮云城', '5302');
+			if ('5302' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '4'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='5321'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('5321 云浮新兴', '5321');
+			if ('5321' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='5322'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('5322 云浮郁南', '5322');
+			if ('5322' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+		if ('0'==kslbdm || '1'==kslbdm ||'5'==kslbdm) {
+			idx = idx + 1;
+			for(var m=0;m<xq.options.length;m++){
+				if(xq.options[m].value=='5381'){
+					xq.options.remove(m);
+					idx = idx - 1;
+				}
+			}
+
+			xq.options[idx] = new Option('5381 云浮罗定', '5381');
+			if ('5381' == xqdm) {
+				xq.options[idx].selected = true;
+			}
+		}
+
+	}
+
+	function checkZshmByrq(){
+		if($("#kslbdm").val()=="1"){
+			if($("#byrq").val()==""){
+				alert('请填入专科毕业日期');
+				return false;
+			}
+			if($("#byzshm").val()==""){
+				$("#byzshm").focus();
+				alert('请填入专科毕业证书号码');
+				return false;
+			}
+			var byrq = $.trim($('#byrq').val());
+			var byzshm = $.trim($('#byzshm').val());
+			if ('待定'!=byzshm) {
+				if(('2023-09'<=byrq)&&('2024-03'>=byrq)){
+					alert('专科毕业日期或毕业证书号填写不合理，请重新输入，如果毕业日期为今年9月至明年3月，那么毕业证书号填入的必须是待定！')
+					return false;
+				}else if(byrq>'2024-03'){
+					alert("当考生为专升本考生时，毕业日期需在"+2024+"-03之前");
+					return false;
+				}
+			} else {
+				if(('2023-09'>byrq)||('2024-03'<byrq)){
+					alert('专科毕业日期或毕业证书号填写不合理，请重新输入，如果毕业证书号填入的是待定，那么毕业日期必须为今年9月至明年3月！')
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	function checkCsrq() {
+		var csrq = $.trim($("#csrq").val());
+		if (csrq == "") {
+			// $("#csrq").focus();
+			alert('请选择出生日期');
+			return false;
+		}
+
+
+		return true;
+	}
+</script>
+<form action="" method="post" name="form1" id="baseform">
+    <input type="hidden" value="0" name="czbj" id="czbj" />
+    <div style="width: 130px; margin-top:80px;float:right;margin-right:80px;"> <font color="red"><span id="hjtip"></span></font></div>
+    <div class="abase" style="width: 800px; margin-top:80px;position: relative; zoom: 1; background-color: #D1EEEE">
+        <div class="top">
+            考生注册
+        </div>
+        <table class="tlist" style="width: 100%;" bgcolor="#D1EEEE" cellpadding="5px;">
+            <tbody>
+            <tr>
+                <td class="ltd">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：
+                </td>
+                <td width="300">
+                    <div class="rig">
+                        <input type="text" name="xm" size="12" maxlength="64" value="" id="xm" class="requiredd" style = "width:150px" onchange="checkXm();">
+                    </div>
+                </td>
+                <td class="ltd">曾&nbsp;&nbsp;用&nbsp;&nbsp;名：
+                </td>
+                <td width="300">
+                    <div class="rig">
+                        <input type="text" name="cym" size="12" maxlength="64" value="" id="cym" style = "width:150px" >
+                        <font color="red">（非必填）</font>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="ltd">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：
+                </td>
+                <td width="300">
+                    <div class="rig">
+
+                        <input type="radio" checked="true" value="1" name="xbdm" id="xbdm">男
+
+                        <input type="radio" checked="true" value="2" name="xbdm" id="xbdm">女
+
+                    </div>
+                </td>
+                <td class="ltd">出生日期：
+                </td>
+                <td width="300">
+                    <div class="rig">
+                        <input type="text" class="requiredd Wdate" value="" name="csrq" id="csrq" size="12" cssstyle="height:18px;"  readonly="true"
+                               onfocus="WdatePicker({dateFmt:&#39;yyyy-MM-dd&#39;})" onchange="checkCsrq();" />
+                        (格式:1990-01-01)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="ltd">证件类型：
+                </td>
+                <td width="300">
+                    <select name="zjlxdm" id="zjlxdm" class="requiredd" style="width: 100px;" onchange="checkZjlx();">
+                        <option value="">--请选择--</option>
+
+                        <option value="1">身份证</option>
+
+                        <option value="3">其他</option>
+
+                    </select>
+                </td>
+                <td class="ltd">证&nbsp;&nbsp;件&nbsp;&nbsp;号：
+                </td>
+                <td width="300">
+                    <div class="rig">
+                        <input type="text" name="zjdm" size="18" maxlength="18" value="" id="zjdm" class="requiredd" onchange="checkZj();">
+                        <br/><font color="red">证件号码一经注册不能修改</font>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="ltd">民&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;族：
+                </td>
+                <td width="300">
+                    <select name="mzdm" id="mzdm" class="requiredd" style="width: 100px;" onchange="checkMz();">
+                        <option value="">--请选择--</option>
+
+                        <option value="01">汉族</option>
+
+                        <option value="02">蒙古族</option>
+
+                        <option value="03">回族</option>
+
+                        <option value="04">藏族</option>
+
+                        <option value="05">维吾尔族</option>
+
+                        <option value="06">苗族</option>
+
+                        <option value="07">彝族</option>
+
+                        <option value="08">壮族</option>
+
+                        <option value="09">布依族</option>
+
+                        <option value="10">朝鲜族</option>
+
+                        <option value="11">满族</option>
+
+                        <option value="12">侗族</option>
+
+                        <option value="13">瑶族</option>
+
+                        <option value="14">白族</option>
+
+                        <option value="15">土家族</option>
+
+                        <option value="16">哈尼族</option>
+
+                        <option value="17">哈萨克族</option>
+
+                        <option value="18">傣族</option>
+
+                        <option value="19">黎族</option>
+
+                        <option value="20">傈僳族</option>
+
+                        <option value="21">佤族</option>
+
+                        <option value="22">畲族</option>
+
+                        <option value="23">高山族</option>
+
+                        <option value="24">拉祜族</option>
+
+                        <option value="25">水族</option>
+
+                        <option value="26">东乡族</option>
+
+                        <option value="27">纳西族</option>
+
+                        <option value="28">景颇族</option>
+
+                        <option value="29">柯尔克孜族</option>
+
+                        <option value="30">土族</option>
+
+                        <option value="31">达斡尔族</option>
+
+                        <option value="32">仫佬族</option>
+
+                        <option value="33">羌族</option>
+
+                        <option value="34">布朗族</option>
+
+                        <option value="35">撒拉族</option>
+
+                        <option value="36">毛南族</option>
+
+                        <option value="37">仡佬族</option>
+
+                        <option value="38">锡伯族</option>
+
+                        <option value="39">阿昌族</option>
+
+                        <option value="40">普米族</option>
+
+                        <option value="41">塔吉克族</option>
+
+                        <option value="42">怒族</option>
+
+                        <option value="43">乌孜别克族</option>
+
+                        <option value="44">俄罗斯族</option>
+
+                        <option value="45">鄂温克族</option>
+
+                        <option value="46">崩龙族</option>
+
+                        <option value="47">保安族</option>
+
+                        <option value="48">裕固族</option>
+
+                        <option value="49">京族</option>
+
+                        <option value="50">塔塔尔族</option>
+
+                        <option value="51">独龙族</option>
+
+                        <option value="52">鄂伦春族</option>
+
+                        <option value="53">赫哲族</option>
+
+                        <option value="54">门巴族</option>
+
+                        <option value="55">珞巴族</option>
+
+                        <option value="56">基诺族</option>
+
+                        <option value="81">穿青人</option>
+
+                        <option value="97">其他</option>
+
+                        <option value="98">外国血统中国籍</option>
+
+                    </select>
+                </td>
+                <td class="ltd">户口所在地：
+                </td>
+                <td width="300">
+                    <select name="hkdm" id="hkdm" class="requiredd" style="width: 150px;" onchange="checkHkszd(1);">
+                        <option value="">--请选择--</option>
+
+                        <option value="440101" data-id = "0">440101&nbsp;广州市辖</option>
+
+                        <option value="440103" data-id = "0">440103&nbsp;广州荔湾</option>
+
+                        <option value="440104" data-id = "0">440104&nbsp;广州越秀</option>
+
+                        <option value="440105" data-id = "0">440105&nbsp;广州海珠</option>
+
+                        <option value="440106" data-id = "0">440106&nbsp;广州天河</option>
+
+                        <option value="440111" data-id = "0">440111&nbsp;广州白云</option>
+
+                        <option value="440112" data-id = "0">440112&nbsp;广州黄埔</option>
+
+                        <option value="440113" data-id = "0">440113&nbsp;广州番禺</option>
+
+                        <option value="440114" data-id = "0">440114&nbsp;广州花都</option>
+
+                        <option value="440115" data-id = "0">440115&nbsp;广州南沙</option>
+
+                        <option value="440117" data-id = "1">440117&nbsp;广州从化</option>
+
+                        <option value="440118" data-id = "0">440118&nbsp;广州增城</option>
+
+                        <option value="440201" data-id = "0">440201&nbsp;韶关市辖</option>
+
+                        <option value="440203" data-id = "0">440203&nbsp;韶关武江</option>
+
+                        <option value="440204" data-id = "0">440204&nbsp;韶关浈江</option>
+
+                        <option value="440205" data-id = "1">440205&nbsp;韶关曲江</option>
+
+                        <option value="440222" data-id = "1">440222&nbsp;韶关始兴</option>
+
+                        <option value="440224" data-id = "1">440224&nbsp;韶关仁化</option>
+
+                        <option value="440229" data-id = "1">440229&nbsp;韶关翁源</option>
+
+                        <option value="440232" data-id = "1">440232&nbsp;韶关乳源</option>
+
+                        <option value="440233" data-id = "1">440233&nbsp;韶关新丰</option>
+
+                        <option value="440281" data-id = "1">440281&nbsp;韶关乐昌</option>
+
+                        <option value="440282" data-id = "1">440282&nbsp;韶关南雄</option>
+
+                        <option value="440301" data-id = "0">440301&nbsp;深圳市辖</option>
+
+                        <option value="440303" data-id = "0">440303&nbsp;深圳罗湖</option>
+
+                        <option value="440304" data-id = "0">440304&nbsp;深圳福田</option>
+
+                        <option value="440305" data-id = "0">440305&nbsp;深圳南山</option>
+
+                        <option value="440306" data-id = "0">440306&nbsp;深圳宝安</option>
+
+                        <option value="440307" data-id = "0">440307&nbsp;深圳龙岗</option>
+
+                        <option value="440308" data-id = "0">440308&nbsp;深圳盐田</option>
+
+                        <option value="440309" data-id = "0">440309&nbsp;深圳光明</option>
+
+                        <option value="440310" data-id = "0">440310&nbsp;深圳坪山</option>
+
+                        <option value="440311" data-id = "0">440311&nbsp;深圳龙华</option>
+
+                        <option value="440312" data-id = "0">440312&nbsp;深圳大鹏</option>
+
+                        <option value="440401" data-id = "0">440401&nbsp;珠海市辖</option>
+
+                        <option value="440402" data-id = "0">440402&nbsp;珠海香洲</option>
+
+                        <option value="440403" data-id = "0">440403&nbsp;珠海斗门</option>
+
+                        <option value="440404" data-id = "0">440404&nbsp;珠海金湾</option>
+
+                        <option value="440501" data-id = "0">440501&nbsp;汕头市辖</option>
+
+                        <option value="440507" data-id = "0">440507&nbsp;汕头龙湖</option>
+
+                        <option value="440511" data-id = "0">440511&nbsp;汕头金平</option>
+
+                        <option value="440512" data-id = "0">440512&nbsp;汕头濠江</option>
+
+                        <option value="440513" data-id = "0">440513&nbsp;汕头潮阳</option>
+
+                        <option value="440514" data-id = "0">440514&nbsp;汕头潮南</option>
+
+                        <option value="440515" data-id = "0">440515&nbsp;汕头澄海</option>
+
+                        <option value="440523" data-id = "1">440523&nbsp;汕头南澳</option>
+
+                        <option value="440601" data-id = "0">440601&nbsp;佛山市辖</option>
+
+                        <option value="440604" data-id = "0">440604&nbsp;佛山禅城</option>
+
+                        <option value="440605" data-id = "0">440605&nbsp;佛山南海</option>
+
+                        <option value="440606" data-id = "0">440606&nbsp;佛山顺德</option>
+
+                        <option value="440607" data-id = "0">440607&nbsp;佛山三水</option>
+
+                        <option value="440608" data-id = "0">440608&nbsp;佛山高明</option>
+
+                        <option value="440701" data-id = "0">440701&nbsp;江门市辖</option>
+
+                        <option value="440703" data-id = "0">440703&nbsp;江门蓬江</option>
+
+                        <option value="440704" data-id = "0">440704&nbsp;江门江海</option>
+
+                        <option value="440705" data-id = "0">440705&nbsp;江门新会</option>
+
+                        <option value="440781" data-id = "0">440781&nbsp;江门台山</option>
+
+                        <option value="440783" data-id = "0">440783&nbsp;江门开平</option>
+
+                        <option value="440784" data-id = "0">440784&nbsp;江门鹤山</option>
+
+                        <option value="440785" data-id = "0">440785&nbsp;江门恩平</option>
+
+                        <option value="440801" data-id = "0">440801&nbsp;湛江市辖</option>
+
+                        <option value="440802" data-id = "0">440802&nbsp;湛江赤坎</option>
+
+                        <option value="440803" data-id = "0">440803&nbsp;湛江霞山</option>
+
+                        <option value="440804" data-id = "0">440804&nbsp;湛江坡头</option>
+
+                        <option value="440806" data-id = "0">440806&nbsp;湛江开发</option>
+
+                        <option value="440811" data-id = "0">440811&nbsp;湛江麻章</option>
+
+                        <option value="440823" data-id = "0">440823&nbsp;湛江遂溪</option>
+
+                        <option value="440825" data-id = "0">440825&nbsp;湛江徐闻</option>
+
+                        <option value="440881" data-id = "0">440881&nbsp;湛江廉江</option>
+
+                        <option value="440882" data-id = "0">440882&nbsp;湛江雷州</option>
+
+                        <option value="440883" data-id = "0">440883&nbsp;湛江吴川</option>
+
+                        <option value="440901" data-id = "0">440901&nbsp;茂名市辖</option>
+
+                        <option value="440902" data-id = "0">440902&nbsp;茂名茂南</option>
+
+                        <option value="440903" data-id = "0">440903&nbsp;茂名茂港</option>
+
+                        <option value="440923" data-id = "0">440923&nbsp;茂名电白</option>
+
+                        <option value="440981" data-id = "1">440981&nbsp;茂名高州</option>
+
+                        <option value="440982" data-id = "0">440982&nbsp;茂名化州</option>
+
+                        <option value="440983" data-id = "1">440983&nbsp;茂名信宜</option>
+
+                        <option value="441201" data-id = "0">441201&nbsp;肇庆市辖</option>
+
+                        <option value="441202" data-id = "0">441202&nbsp;肇庆端州</option>
+
+                        <option value="441203" data-id = "0">441203&nbsp;肇庆鼎湖</option>
+
+                        <option value="441204" data-id = "1">441204&nbsp;肇庆高要</option>
+
+                        <option value="441223" data-id = "1">441223&nbsp;肇庆广宁</option>
+
+                        <option value="441224" data-id = "1">441224&nbsp;肇庆怀集</option>
+
+                        <option value="441225" data-id = "1">441225&nbsp;肇庆封开</option>
+
+                        <option value="441226" data-id = "1">441226&nbsp;肇庆德庆</option>
+
+                        <option value="441284" data-id = "0">441284&nbsp;肇庆四会</option>
+
+                        <option value="441291" data-id = "0">441291&nbsp;肇庆大旺</option>
+
+                        <option value="441301" data-id = "0">441301&nbsp;惠州市辖</option>
+
+                        <option value="441302" data-id = "0">441302&nbsp;惠州惠城</option>
+
+                        <option value="441303" data-id = "0">441303&nbsp;惠州惠阳</option>
+
+                        <option value="441306" data-id = "0">441306&nbsp;惠州仲恺</option>
+
+                        <option value="441322" data-id = "0">441322&nbsp;惠州博罗</option>
+
+                        <option value="441323" data-id = "1">441323&nbsp;惠州惠东</option>
+
+                        <option value="441324" data-id = "1">441324&nbsp;惠州龙门</option>
+
+                        <option value="441391" data-id = "0">441391&nbsp;惠州亚湾</option>
+
+                        <option value="441401" data-id = "0">441401&nbsp;梅州市辖</option>
+
+                        <option value="441402" data-id = "1">441402&nbsp;梅州梅江</option>
+
+                        <option value="441421" data-id = "1">441421&nbsp;梅州梅县</option>
+
+                        <option value="441422" data-id = "1">441422&nbsp;梅州大埔</option>
+
+                        <option value="441423" data-id = "1">441423&nbsp;梅州丰顺</option>
+
+                        <option value="441424" data-id = "1">441424&nbsp;梅州五华</option>
+
+                        <option value="441426" data-id = "1">441426&nbsp;梅州平远</option>
+
+                        <option value="441427" data-id = "1">441427&nbsp;梅州蕉岭</option>
+
+                        <option value="441481" data-id = "1">441481&nbsp;梅州兴宁</option>
+
+                        <option value="441501" data-id = "0">441501&nbsp;汕尾市辖</option>
+
+                        <option value="441502" data-id = "0">441502&nbsp;汕尾城区</option>
+
+                        <option value="441521" data-id = "1">441521&nbsp;汕尾海丰</option>
+
+                        <option value="441523" data-id = "1">441523&nbsp;汕尾陆河</option>
+
+                        <option value="441581" data-id = "0">441581&nbsp;汕尾陆丰</option>
+
+                        <option value="441601" data-id = "0">441601&nbsp;河源市辖</option>
+
+                        <option value="441602" data-id = "0">441602&nbsp;河源源城</option>
+
+                        <option value="441609" data-id = "">441609&nbsp;江东新区</option>
+
+                        <option value="441621" data-id = "1">441621&nbsp;河源紫金</option>
+
+                        <option value="441622" data-id = "1">441622&nbsp;河源龙川</option>
+
+                        <option value="441623" data-id = "1">441623&nbsp;河源连平</option>
+
+                        <option value="441624" data-id = "1">441624&nbsp;河源和平</option>
+
+                        <option value="441625" data-id = "1">441625&nbsp;河源东源</option>
+
+                        <option value="441701" data-id = "0">441701&nbsp;阳江市辖</option>
+
+                        <option value="441702" data-id = "0">441702&nbsp;阳江江城</option>
+
+                        <option value="441721" data-id = "0">441721&nbsp;阳江阳西</option>
+
+                        <option value="441722" data-id = "0">441722&nbsp;阳江高新</option>
+
+                        <option value="441723" data-id = "0">441723&nbsp;阳江阳东</option>
+
+                        <option value="441781" data-id = "1">441781&nbsp;阳江阳春</option>
+
+                        <option value="441791" data-id = "0">441791&nbsp;阳江海陵</option>
+
+                        <option value="441801" data-id = "0">441801&nbsp;清远市辖</option>
+
+                        <option value="441802" data-id = "0">441802&nbsp;清远清城</option>
+
+                        <option value="441821" data-id = "1">441821&nbsp;清远佛冈</option>
+
+                        <option value="441823" data-id = "1">441823&nbsp;清远阳山</option>
+
+                        <option value="441825" data-id = "1">441825&nbsp;清远连山</option>
+
+                        <option value="441826" data-id = "1">441826&nbsp;清远连南</option>
+
+                        <option value="441827" data-id = "1">441827&nbsp;清远清新</option>
+
+                        <option value="441881" data-id = "1">441881&nbsp;清远英德</option>
+
+                        <option value="441882" data-id = "1">441882&nbsp;清远连州</option>
+
+                        <option value="441900" data-id = "0">441900&nbsp;东莞市</option>
+
+                        <option value="442000" data-id = "0">442000&nbsp;中山市</option>
+
+                        <option value="445101" data-id = "0">445101&nbsp;潮州市辖</option>
+
+                        <option value="445102" data-id = "0">445102&nbsp;潮州湘桥</option>
+
+                        <option value="445121" data-id = "1">445121&nbsp;潮州潮安</option>
+
+                        <option value="445122" data-id = "1">445122&nbsp;潮州饶平</option>
+
+                        <option value="445201" data-id = "0">445201&nbsp;揭阳市辖</option>
+
+                        <option value="445202" data-id = "0">445202&nbsp;揭阳榕城</option>
+
+                        <option value="445221" data-id = "0">445221&nbsp;揭阳揭东</option>
+
+                        <option value="445222" data-id = "1">445222&nbsp;揭阳揭西</option>
+
+                        <option value="445224" data-id = "1">445224&nbsp;揭阳惠来</option>
+
+                        <option value="445281" data-id = "1">445281&nbsp;揭阳普宁</option>
+
+                        <option value="445291" data-id = "0">445291&nbsp;揭阳空港</option>
+
+                        <option value="445292" data-id = "0">445292&nbsp;揭阳蓝城</option>
+
+                        <option value="445301" data-id = "0">445301&nbsp;云浮市辖</option>
+
+                        <option value="445302" data-id = "1">445302&nbsp;云浮云城</option>
+
+                        <option value="445321" data-id = "1">445321&nbsp;云浮新兴</option>
+
+                        <option value="445322" data-id = "1">445322&nbsp;云浮郁南</option>
+
+                        <option value="445323" data-id = "1">445323&nbsp;云浮云安</option>
+
+                        <option value="445381" data-id = "1">445381&nbsp;云浮罗定</option>
+
+                        <option value="999999" data-id = "0">999999&nbsp;外省</option>
+
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="ltd">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：
+                </td>
+                <td width="300">
+                    <div class="rig">
+                        <input type="password" name="pwd" size="15" maxlength="8" value="" id="pwd" class="requiredd" onchange="checkMm();">
+                        <img src="../image/0.png" id="eyes" onClick="eyeImgClick()" style="position: relative;top:6px;right:25px;width:20px;height:20px">
+                        <br/>(8位大小字母、数字和特殊字符)
+                    </div>
+                </td>
+                <td class="ltd">确认密码：
+                </td>
+                <td width="300">
+                    <div class="rig">
+                        <input type="password" name="qrpwd" size="15" maxlength="8" value="" id="qrpwd" class="requiredd" onchange="checkQrMm();">
+                        <img src="../image/0.png" id="qreyes" onClick="qreyeImgClick()" style="position: relative;top:6px;right:25px;width:20px;height:20px">
+                        <!-- <br/>(8位大小字母、数字和特殊字符) -->
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="ltd">移动电话：
+                </td>
+                <td colspan="3">
+                    <div class="rig">
+                        <input type="text" name="lxsj" maxlength="11" value="" czbj="0" id="lxsj" class="requiredd" onchange="checkLxsj();" />
+                        <font color="red">(此手机号码用于绑定您的网上报名号)</font>
+                        <input type="hidden" id="sjbdbj" value="0"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="ltd">验&nbsp;&nbsp;证&nbsp;&nbsp;码：
+                </td>
+                <td colspan="3">
+                    <div class="rig">
+                        <input type="text" name="yzm" maxlength="11" value="" czbj="0" id="yzm" class="requiredd" />
+                        <input type="button" onClick="hqsjyzm(this);" value="获取验证码" />
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div style="display: inherit">
+            <canvas width="10px" height="10px" style="position:absolute;top:-1px;right:-1px;"></canvas>
+            <canvas width="10px" height="10px" style="position:absolute;top:-1px;left:-1px;"></canvas>
+        </div>
+    </div>
+    <br />
+    <center>
+        <input type="checkbox" id="mustCheck" value="0" style="zoom:150%;vertical-align:middle;width:30px;heigth:30px;">
+        <span style="vertical-align:middle;margin-left:-10px">我已阅读并同意<a href="yhzcxy.html" style="text-decoration:none" target="_blank">《用户注册协议》</a></span>
+    </center>
+    <br />
+    <center>
+        <input class="btn" type="button" value="注册" id="tjbmzl" onclick="kszc();" style="width:70px;height:30px" />
+    </center>
+</form>
+<center class="dbgg">
+    <hr/>
+    <div>Copyright&#169;2010-2023 版权所有：广东省教育考试院</div>
+    <div>地址：广州市中山大道69号 邮编：510631 电话：(020)38627844、38627855</div>
+</center>
+</body>
+
+<script>
+	<!--解决jsp表达式冲突-->
+	juicer.set({
+		'tag::operationOpen': '{@',
+		'tag::operationClose': '}',
+		'tag::interpolateOpen': '{{',
+		'tag::interpolateClose': '}}',
+		'tag::noneencodeOpen': '{{{',
+		'tag::noneencodeClose': '}}}',
+		'tag::commentOpen': '{#',
+		'tag::commentClose': '}'
+	});
+</script>
+<script type="text/javascript">
+	var pwdflag = 0;
+	var pwdinput = $("#pwd");
+	var pwdeyes = $("#eyes");
+	function eyeImgClick(){
+		if(pwdflag == 0){
+			pwdinput.attr('type','text');
+			pwdeyes.attr('src','../image/1.png');
+			pwdflag = 1;
+		}else{
+			pwdinput.attr('type','password');
+			pwdeyes.attr('src','../image/0.png');
+			pwdflag = 0;
+		}
+	}
+
+	var qrpwdflag = 0;
+	var qrpwdinput = $("#qrpwd");
+	var qrpwdeyes = $("#qreyes");
+	function qreyeImgClick(){
+		if(qrpwdflag == 0){
+			qrpwdinput.attr('type','text');
+			qrpwdeyes.attr('src','../image/1.png');
+			qrpwdflag = 1;
+		}else{
+			qrpwdinput.attr('type','password');
+			qrpwdeyes.attr('src','../image/0.png');
+			qrpwdflag = 0;
+		}
+	}
+</script>
+<script type="text/template" id="mssPop">
+    <div class="abase" id="div1" style="width: 430px; position: relative; zoom: 1; border: 0px;">
+        <div style="margin: 30px 0px 20px 0px;line-height: 24px;">
+            具有普通高职（专科）毕业学历的退役士兵或参加下基层等项目服务期满并考核合格的人员可申请免试，请于报名期间持身份证、普通高职（专科）毕业证、士兵退役证（退役证需复印封面及内页）或分别由国家及地方相应政府部门颁发的有关项目考核合格证（及复印件）到考生选定报名点办理信息校对、毕业证验核、退役证及有关项目考核合格证验核等手续。
+        </div>
+        <center>
+        </center>
+    </div>
+</script>
+</html>
