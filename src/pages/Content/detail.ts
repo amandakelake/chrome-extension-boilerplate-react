@@ -30,7 +30,7 @@ export function filterDetail(item: DataItem) {
 	filterInputById('byxx', item.graduatedSchool)
 	filterInputById('byzy', item.graduatedProfession);
 	filterGraduateTime(item.graduateTime);
-	filterInputById('byzshm', item.graduatedId)
+	filterInputById('byzshm', item.graduatedId || '待定')
 	filterInputById('yzbm', item.postalCode)
 	filterInputById('lxdh', item.telephone)
 	filterAddress(item);
