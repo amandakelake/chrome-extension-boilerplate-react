@@ -32,10 +32,13 @@ export interface DataItem {
 	/**
 	 * 报考学校编码
 	 */
-	schoolCode: string;
+	schoolOneCode: string;
+	schoolTwoCode: string
 	/**
 	 * 报考专业编码
 	 */
 	professionOneCode: string;
 	professionTwoCode: string;
+	professionThreeCode: string
+	professionFourCode: string
 }

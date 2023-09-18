@@ -205,19 +205,47 @@ export function filterProfession(item: DataItem, type: string) {
 		// 1 专升本 第一行
 		const schoolElement = document.getElementById('zsbpc1bkyx1') as HTMLInputElement;
 		console.log('schoolElement', schoolElement);
-		if (schoolElement) schoolElement.value = item.schoolCode;
+		if (schoolElement && item.schoolOneCode) schoolElement.value = item.schoolOneCode;
 		const professionOneElement = document.getElementById('zsbpc1bkyx1zy1') as HTMLInputElement;
-		if (professionOneElement) professionOneElement.value = item.professionOneCode;
+		if (professionOneElement && item.professionOneCode) professionOneElement.value = item.professionOneCode;
 		const professionTwoElement = document.getElementById('zsbpc1bkyx1zy2') as HTMLInputElement;
-		if (professionTwoElement) professionTwoElement.value = item.professionTwoCode;
-	} else if (type === '4' || type === '5') {
+		if (professionTwoElement && item.professionTwoCode) professionTwoElement.value = item.professionTwoCode;
+
+		const schoolTwoElement = document.getElementById('zsbpc1bkyx2') as HTMLInputElement;
+		if (schoolTwoElement && item.schoolTwoCode) schoolTwoElement.value = item.schoolTwoCode;
+		const professionThreeElement = document.getElementById('zsbpc1bkyx2zy1') as HTMLInputElement;
+		if (professionThreeElement && item.professionThreeCode) professionThreeElement.value = item.professionThreeCode;
+		const professionFourElement = document.getElementById('zsbpc1bkyx2zy2') as HTMLInputElement;
+		if (professionFourElement && item.professionFourCode) professionFourElement.value = item.professionFourCode;
+	} else if (type === '4') {
 		// 4 高中起点本科: 非脱产班 第一行
-		// 5 高中起点高职高专: 非脱产班 第一行
 		const schoolElement = document.getElementById('gqbpc4bkyx1') as HTMLInputElement;
-		if (schoolElement) schoolElement.value = item.schoolCode;
+		if (schoolElement && item.schoolOneCode) schoolElement.value = item.schoolOneCode;
 		const professionOneElement = document.getElementById('gqbpc4bkyx1zy1') as HTMLInputElement;
-		if (professionOneElement) professionOneElement.value = item.professionOneCode;
+		if (professionOneElement && item.professionOneCode) professionOneElement.value = item.professionOneCode;
 		const professionTwoElement = document.getElementById('gqbpc4bkyx1zy2') as HTMLInputElement;
-		if (professionTwoElement) professionTwoElement.value = item.professionTwoCode;
+		if (professionTwoElement && item.professionTwoCode) professionTwoElement.value = item.professionTwoCode;
+
+		const schoolTwoElement = document.getElementById('gqbpc4bkyx2') as HTMLInputElement;
+		if (schoolTwoElement && item.schoolTwoCode) schoolTwoElement.value = item.schoolTwoCode;
+		const professionThreeElement = document.getElementById('gqbpc4bkyx2zy1') as HTMLInputElement;
+		if (professionThreeElement && item.professionThreeCode) professionThreeElement.value = item.professionThreeCode;
+		const professionFourElement = document.getElementById('gqbpc4bkyx2zy2') as HTMLInputElement;
+		if (professionFourElement && item.professionFourCode) professionFourElement.value = item.professionFourCode;
+	} else if (type === '5') {
+		// 5 高中起点高职高专: 非脱产班 第一行
+		const schoolElement = document.getElementById('gqgpc4bkyx1') as HTMLInputElement;
+		if (schoolElement && item.schoolOneCode) schoolElement.value = item.schoolOneCode;
+		const professionOneElement = document.getElementById('gqgpc4bkyx1zy1') as HTMLInputElement;
+		if (professionOneElement && item.professionOneCode) professionOneElement.value = item.professionOneCode;
+		const professionTwoElement = document.getElementById('gqgpc4bkyx1zy2') as HTMLInputElement;
+		if (professionTwoElement && item.professionTwoCode) professionTwoElement.value = item.professionTwoCode;
+
+		const schoolTwoElement = document.getElementById('gqgpc4bkyx2') as HTMLInputElement;
+		if (schoolTwoElement && item.schoolTwoCode) schoolTwoElement.value = item.schoolTwoCode;
+		const professionThreeElement = document.getElementById('gqgpc4bkyx2zy1') as HTMLInputElement;
+		if (professionThreeElement && item.professionThreeCode) professionThreeElement.value = item.professionThreeCode;
+		const professionFourElement = document.getElementById('gqgpc4bkyx2zy2') as HTMLInputElement;
+		if (professionFourElement && item.professionFourCode) professionFourElement.value = item.professionFourCode;
 	}
 }
