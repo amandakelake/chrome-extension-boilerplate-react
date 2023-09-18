@@ -13,8 +13,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 		register(data);
 	} else if (cmd === 'filterDetail') {
 		filterDetail(data);
-	} else if (cmd === 'filterProfession') {
-		filterProfession(data);
 	}
 	sendResponse({
 		message: 'filter done!',

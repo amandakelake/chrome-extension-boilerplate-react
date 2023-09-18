@@ -2,14 +2,11 @@ import { DataItem } from '../../types/item';
 import {
 	ExamineeTypeMap,
 	ExamLanguageMap,
-	GuangdongAddressTree,
 	guangdongCityList, guangdongCode,
 	PoliticalStatusMap,
 } from './constant';
 
 let detailTable: HTMLTableElement | null;
-let professionTable: HTMLTableElement | null;
-let ExamineeType: string;
 
 function getCell(row: number, column: number, table: HTMLTableElement | null): HTMLTableCellElement | null {
 	if (!table) return null;
@@ -46,7 +43,7 @@ export function filterDetail(item: DataItem) {
 	filterPostalCode(item.postalCode);
 	filterTelephone(item.telephone);
 	filterAddress(item);
-	filterProfession(item, type.value);
+	filterProfession(item, String(type?.value));
 }
 
 function filterPoliticalStatus(politicalStatus: string) {
@@ -77,7 +74,6 @@ function getExamineeType() {
 function filterExamineeType(examineeType: string) {
 	const selector = getExamineeType() as HTMLSelectElement;
 	selector.value = ExamineeTypeMap[examineeType];
-	ExamineeType = ExamineeTypeMap[examineeType];
 }
 
 function filterCareer() {
@@ -88,23 +84,26 @@ function filterCareer() {
 	selector.value = '00';
 }
 
-function filterGraduatedSchool(graduatedProfession: string) {
+function filterGraduatedSchool(graduatedSchool: string) {
+	if (!graduatedSchool) return false;
 	const cell = getCell(14, 1, detailTable);
-	if (!cell) return;
-	const input = cell.querySelector('input');
-	if (!input) return;
-	input.value = graduatedProfession;
-}
-
-function filterGraduatedProfession(graduatedSchool: string) {
-	const cell = getCell(15, 1, detailTable);
 	if (!cell) return;
 	const input = cell.querySelector('input');
 	if (!input) return;
 	input.value = graduatedSchool;
 }
 
+function filterGraduatedProfession(graduatedProfession: string) {
+	if (!graduatedProfession) return false;
+	const cell = getCell(15, 1, detailTable);
+	if (!cell) return;
+	const input = cell.querySelector('input');
+	if (!input) return;
+	input.value = graduatedProfession;
+}
+
 function filterGraduateTime(graduateTime: string) {
+	if (!graduateTime) return;
 	try {
 		const cell = getCell(14, 3, detailTable);
 		if (!cell) return;
@@ -119,6 +118,7 @@ function filterGraduateTime(graduateTime: string) {
 }
 
 function filterGraduatedId(graduatedId: string) {
+	if (!graduatedId) return false;
 	const cell = getCell(16, 1, detailTable);
 	if (!cell) return;
 	const input = cell.querySelector('input');
@@ -127,6 +127,7 @@ function filterGraduatedId(graduatedId: string) {
 }
 
 function filterPostalCode(postalCode: string) {
+	if (!postalCode) return;
 	const cell = getCell(17, 1, detailTable);
 	if (!cell) return;
 	const input = cell.querySelector('input');
@@ -135,6 +136,7 @@ function filterPostalCode(postalCode: string) {
 }
 
 function filterTelephone(telephone: string) {
+	if (!telephone) return;
 	const cell = getCell(17, 3, detailTable);
 	if (!cell) return;
 	const input = cell.querySelector('input');
@@ -197,9 +199,9 @@ declare global {
 	}
 }
 
-export function filterProfession(item: DataItem, ExamineeType: string) {
-	console.log('ExamineeType', ExamineeType);
-	if (ExamineeType === '1') {
+export function filterProfession(item: DataItem, type: string) {
+	console.log('type', type);
+	if (type === '1') {
 		// 1 专升本 第一行
 		const schoolElement = document.getElementById('zsbpc1bkyx1') as HTMLInputElement;
 		console.log('schoolElement', schoolElement);
@@ -208,7 +210,7 @@ export function filterProfession(item: DataItem, ExamineeType: string) {
 		if (professionOneElement) professionOneElement.value = item.professionOneCode;
 		const professionTwoElement = document.getElementById('zsbpc1bkyx1zy2') as HTMLInputElement;
 		if (professionTwoElement) professionTwoElement.value = item.professionTwoCode;
-	} else {
+	} else if (type === '4' || type === '5') {
 		// 4 高中起点本科: 非脱产班 第一行
 		// 5 高中起点高职高专: 非脱产班 第一行
 		const schoolElement = document.getElementById('gqbpc4bkyx1') as HTMLInputElement;
